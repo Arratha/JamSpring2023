@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using Drop.Liquids;
 using Drop.Movement;
 using Drop.Visuals;
-
+using Drop.Shooting;
 
 namespace Player.Controller
 {
@@ -13,11 +12,6 @@ namespace Player.Controller
         private MainController _main = new MainController();
 
         [SerializeField] private DropController _drop;
-
-        private void Start()
-        {
-            _drop.Start();
-        }
 
         private void Update()
         {
@@ -54,22 +48,14 @@ namespace Player.Controller
         [System.Serializable]
         private class DropController
         {
-            [SerializeField] private Drop_LiquidsController _dropLiquids;
             [SerializeField] private Drop_MoveController _dropMove;
             [SerializeField] private Drop_VisualController _dropVisual;
-
-            private float _jumpPreparation;
-            private const float MaxJumpPreparation = 1f;
-
-            public void Start()
-            {
-                _dropLiquids.ChangeLiquid(0);
-            }
+            [SerializeField] private Drop_ShootingController _dropShooting;
 
             public void Update()
             {
                 Jump();
-                ChangeLiquid();
+                Shoot();
             }
 
             public void FixedUpdate()
@@ -80,43 +66,25 @@ namespace Player.Controller
 
             private void Jump()
             {
-                if (Input.GetMouseButton(1))
-                    _jumpPreparation = Mathf.Min(MaxJumpPreparation, _jumpPreparation + Time.deltaTime);
-                else
-                    _jumpPreparation = Mathf.Max(0, _jumpPreparation - 3 * Time.deltaTime);
-
-
-                if (Input.GetMouseButtonUp(1))
-                {
-                    _dropMove.Jump(Input.mousePosition, _jumpPreparation);
-                    _jumpPreparation = 0;
-                }
-
-                _dropVisual.Shrink(_jumpPreparation / MaxJumpPreparation);
+                if (Input.GetKeyDown(KeyCode.W))
+                    _dropMove.Jump();
             }
 
             private void Move()
             {
-                if (Input.GetMouseButton(0))
-                    _dropMove.Move(Input.mousePosition);
+                _dropMove.Move(Input.GetAxis("Horizontal"));
             }
 
             private void Stop()
             {
-                if (!Input.GetMouseButton(0))
+                if (Input.GetAxis("Horizontal") == 0)
                     _dropMove.Stop();
             }
 
-            private void ChangeLiquid()
+            private void Shoot()
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                    _dropLiquids.ChangeLiquid(0);
-
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                    _dropLiquids.ChangeLiquid(1);
-
-                if (Input.GetKeyDown(KeyCode.Alpha3))
-                    _dropLiquids.ChangeLiquid(2);
+                if (Input.GetMouseButtonDown(0))
+                    _dropShooting.Shoot(Input.mousePosition);
             }
         }
     }

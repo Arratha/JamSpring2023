@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2020999642}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.43062332
+  m_Distance: 0.43062335
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134657568075613
@@ -204,7 +204,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.23765515
+  m_Distance: 0.23765522
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &2020999642
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 126622003}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,7 +364,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.20489809
+  m_Distance: 0.20489813
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134657693736367
 SpringJoint2D:
@@ -383,7 +383,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.49394763
+  m_Distance: 0.4939476
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134657693736364
@@ -403,7 +403,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.20489809
+  m_Distance: 0.20489813
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134657693736365
@@ -423,7 +423,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.21938549
+  m_Distance: 0.21938552
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &126622003
@@ -451,12 +451,11 @@ GameObject:
   - component: {fileID: 3255134657837512440}
   - component: {fileID: 3255134657837512437}
   - component: {fileID: 3255134657837512436}
-  - component: {fileID: 6432304584279901237}
   - component: {fileID: 320211434}
   - component: {fileID: 1997581822}
   m_Layer: 0
   m_Name: Drop
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,18 +605,6 @@ MonoBehaviour:
   - {fileID: 3255134658125526386}
   - {fileID: 3255134659420782805}
   - {fileID: 3255134658357281218}
---- !u!114 &6432304584279901237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3255134657837512441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e3412ddf1c1db946855796dfec2c93b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &320211434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5929678772e2e1e48804e3b5b681eab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skin: {fileID: 3255134658437680908}
 --- !u!1 &3255134657908839348
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +648,7 @@ GameObject:
   - component: {fileID: 493776800}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,7 +774,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.25522983
+  m_Distance: 0.2552298
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134657908839344
 SpringJoint2D:
@@ -827,7 +813,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.25522983
+  m_Distance: 0.2552298
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134657908839350
@@ -881,7 +867,7 @@ GameObject:
   - component: {fileID: 141074312}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1026,7 +1012,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.4373628
+  m_Distance: 0.43736282
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134657928810624
@@ -1100,7 +1086,7 @@ GameObject:
   - component: {fileID: 1013180037}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1226,7 +1212,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.20919187
+  m_Distance: 0.20919186
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134658125526390
 SpringJoint2D:
@@ -1245,7 +1231,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.4713582
+  m_Distance: 0.47135815
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134658125526391
@@ -1265,7 +1251,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.20919187
+  m_Distance: 0.20919186
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134658125526388
@@ -1285,7 +1271,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2116678
+  m_Distance: 0.21166779
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &1013180037
@@ -1319,7 +1305,7 @@ GameObject:
   - component: {fileID: 1524861390}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1445,7 +1431,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2116678
+  m_Distance: 0.21166779
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134658135502840
 SpringJoint2D:
@@ -1464,7 +1450,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.45553398
+  m_Distance: 0.455534
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134658135502841
@@ -1484,7 +1470,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.2116678
+  m_Distance: 0.21166779
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134658135502846
@@ -1538,7 +1524,7 @@ GameObject:
   - component: {fileID: 1516333356}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1664,7 +1650,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.21938549
+  m_Distance: 0.21938552
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134658144548624
 SpringJoint2D:
@@ -1683,7 +1669,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.5000112
+  m_Distance: 0.50001127
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134658144548627
@@ -1703,7 +1689,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.21938549
+  m_Distance: 0.21938552
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134658144548626
@@ -1723,7 +1709,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.19465676
+  m_Distance: 0.19465673
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &1516333356
@@ -1757,7 +1743,7 @@ GameObject:
   - component: {fileID: 880592060}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1883,7 +1869,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.19465676
+  m_Distance: 0.19465673
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134658357281279
 SpringJoint2D:
@@ -1922,7 +1908,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.19465676
+  m_Distance: 0.19465673
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134658357281277
@@ -1976,7 +1962,7 @@ GameObject:
   - component: {fileID: 419521367}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2161,7 +2147,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.21351582
+  m_Distance: 0.2135158
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &419521367
@@ -2189,7 +2175,7 @@ GameObject:
   - component: {fileID: 3255134658437680909}
   m_Layer: 0
   m_Name: Closed Sprite Shape
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2447,7 +2433,7 @@ GameObject:
   - component: {fileID: 1527079077}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2573,7 +2559,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.23765515
+  m_Distance: 0.23765522
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134658739082198
 SpringJoint2D:
@@ -2592,7 +2578,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.4107803
+  m_Distance: 0.41078034
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134658739082199
@@ -2612,7 +2598,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.23765515
+  m_Distance: 0.23765522
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134658739082196
@@ -2632,7 +2618,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.25522983
+  m_Distance: 0.2552298
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &1527079077
@@ -2666,7 +2652,7 @@ GameObject:
   - component: {fileID: 1769003352}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2792,7 +2778,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.21351582
+  m_Distance: 0.2135158
   m_MaxDistanceOnly: 0
 --- !u!231 &3255134659130134110
 SpringJoint2D:
@@ -2831,7 +2817,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.21351582
+  m_Distance: 0.2135158
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &3255134659130134108
@@ -2851,7 +2837,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.20489809
+  m_Distance: 0.20489813
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &1769003352
@@ -2885,7 +2871,7 @@ GameObject:
   - component: {fileID: 1399087452}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3030,7 +3016,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.48231345
+  m_Distance: 0.48231348
   m_DampingRatio: 0.5
   m_Frequency: 8
 --- !u!231 &3255134659420782814
@@ -3070,7 +3056,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.20919187
+  m_Distance: 0.20919186
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!114 &1399087452
@@ -3104,7 +3090,7 @@ GameObject:
   - component: {fileID: 1370587188}
   m_Layer: 0
   m_Name: ShapePoint
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

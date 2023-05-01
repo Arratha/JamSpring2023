@@ -7,7 +7,7 @@ using Settings.Tags;
 
 namespace Drop.Movement
 {
-    [RequireComponent(typeof(Collision2D))]
+    [RequireComponent(typeof(Collider2D))]
     public class Drop_ShapePoint : MonoBehaviour
     {
         public bool IsGrounded { get; private set; }
@@ -15,6 +15,8 @@ namespace Drop.Movement
         private List<Collider2D> _groundColliders = new List<Collider2D>();
 
         public Vector2 Velocity { get => _pointRigidBody.velocity; set => _pointRigidBody.velocity = value; }
+
+        private Collider2D _dropCollider;
 
         private Rigidbody2D _pointRigidBody;
 
@@ -25,8 +27,10 @@ namespace Drop.Movement
         {
             _pointRigidBody = GetComponent<Rigidbody2D>();
 
-            Drop_MoveController _dropMoveController = GetComponentInParent<Drop_MoveController>();
-            _dropMoveController.AddShapePoint(this);
+            Drop_MoveController dropMoveController = GetComponentInParent<Drop_MoveController>();
+            dropMoveController.AddShapePoint(this);
+
+            _dropCollider = dropMoveController.GetComponent<Collider2D>();
         }
 
         private void LateUpdate()
@@ -48,7 +52,12 @@ namespace Drop.Movement
         {
             if (collision.gameObject.CompareTag(Tags.GroundTag)
                 && !_groundColliders.Contains(collision.collider))
-                _groundColliders.Add(collision.collider);
+                foreach (var currentPoint in collision.contacts)
+                    if (currentPoint.point.y <= _dropCollider.bounds.min.y)
+                    {
+                        _groundColliders.Add(collision.collider);
+                        break;
+                    }
         }
 
         public void OnCollisionExit2D(Collision2D collision)
