@@ -27,12 +27,12 @@ namespace Drop.Movement
         private bool _isInCollision => _shapePoints.FindAll(x => x.IsInCollision).Count != 0;
         private List<Drop_ShapePoint> _shapePoints = new List<Drop_ShapePoint>();
 
-        private Transform _dropTransform;
+        private Transform _dropBodyTransform;
 
         private void Awake()
         {
             _dropRigidbody = GetComponent<Rigidbody2D>();
-            _dropTransform = transform;
+            _dropBodyTransform = transform;
         }
 
         public void AddShapePoint(Drop_ShapePoint point)
@@ -45,7 +45,7 @@ namespace Drop.Movement
             if (!_isGrounded)
                 return;
 
-            Vector2 targetVector = Camera.main.ScreenToWorldPoint(mousePosition) - _dropTransform.position;
+            Vector2 targetVector = Camera.main.ScreenToWorldPoint(mousePosition) - _dropBodyTransform.position;
 
             _dropRigidbody.AddForce(targetVector.normalized * JumpForce * prepTime);
         }

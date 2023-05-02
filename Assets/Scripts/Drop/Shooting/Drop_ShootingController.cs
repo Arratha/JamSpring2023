@@ -1,28 +1,33 @@
+using System.Collections.Generic;
+
 using UnityEngine;
+
+using Drop.Shooting.Weapon;
 
 
 namespace Drop.Shooting
 {
     public class Drop_ShootingController : MonoBehaviour
     {
-        [SerializeField] private Rigidbody2D _projcetilePrefab;
+        [SerializeField] private Rigidbody2D _baseProjcetilePrefab;
 
-        private float ShootForce = 30;
+        private List<IWeapon> _currentWeapon = new List<IWeapon>();
 
-        private Transform _dropTransform;
+        private Transform _shootingPointTransform;
 
         private void Awake()
         {
-            _dropTransform = transform;
+            _shootingPointTransform = transform;
+
+            _currentWeapon.Add(new Weapon_Water(_baseProjcetilePrefab, _shootingPointTransform));
         }
 
         public void Shoot(Vector2 mousePosition)
         {
-            Rigidbody2D projectile = Instantiate(_projcetilePrefab, _dropTransform.position, new Quaternion(0, 0, 0, 0));
+            Vector2 modifiedPosition = new Vector2(mousePosition.x * Random.Range(0.95f, 1.05f), mousePosition.y * Random.Range(0.95f, 1.05f));
+            Vector2 targetVector = (Camera.main.ScreenToWorldPoint(modifiedPosition) - _shootingPointTransform.position).normalized;
 
-            Vector2 targetVector = Camera.main.ScreenToWorldPoint(mousePosition) - _dropTransform.position;
-
-            projectile.AddForce(targetVector.normalized * ShootForce);
+            _currentWeapon[0].Shoot(targetVector, () => _currentWeapon.RemoveAt(0));
         }
     }
 }

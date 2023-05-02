@@ -20,7 +20,7 @@ namespace SoftBody.Skin
             UpdateVerticies();
         }
 
-        public void Shrink(float percent)
+        public void GroupUp(float percent)
         {
             float min = 1 / SpriteSizeMultiplier;
 
