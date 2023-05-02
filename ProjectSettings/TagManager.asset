@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Drop
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Projectile
+  - Drop
   - 
   - 
   - 

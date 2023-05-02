@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 
 using Settings.Tags;
+using Pickables;
 
 
 namespace Drop.Movement
@@ -14,7 +16,8 @@ namespace Drop.Movement
         public bool IsInCollision => _groundColliders.Count > 0;
         private List<Collider2D> _groundColliders = new List<Collider2D>();
 
-        public Vector2 Velocity { get => _pointRigidBody.velocity; set => _pointRigidBody.velocity = value; }
+        public Vector2 Velocity 
+        { get => _pointRigidBody.velocity; set => _pointRigidBody.velocity = value; }
 
         private Collider2D _dropCollider;
 
@@ -22,6 +25,12 @@ namespace Drop.Movement
 
         private float _groundedTimer;
         private const float GroundedExtraTime = 0.25f;
+
+        private DistanceJoint2D _distanceJoint;
+        private float _distanceJointDistance;
+
+        private SpringJoint2D[] _springJoints;
+        private float[] _springJointsBaseDistance;
 
         private void Awake()
         {
@@ -31,6 +40,12 @@ namespace Drop.Movement
             dropMoveController.AddShapePoint(this);
 
             _dropCollider = dropMoveController.GetComponent<Collider2D>();
+
+            _distanceJoint = GetComponent<DistanceJoint2D>();
+            _distanceJointDistance = _distanceJoint.distance;
+
+            _springJoints = GetComponents<SpringJoint2D>();
+            _springJointsBaseDistance = _springJoints.Select(x => x.distance).ToArray();
         }
 
         private void LateUpdate()
@@ -52,12 +67,14 @@ namespace Drop.Movement
         {
             if (collision.gameObject.CompareTag(Tags.GroundTag)
                 && !_groundColliders.Contains(collision.collider))
-                foreach (var currentPoint in collision.contacts)
-                    if (currentPoint.point.y <= _dropCollider.bounds.min.y)
-                    {
-                        _groundColliders.Add(collision.collider);
-                        break;
-                    }
+                _groundColliders.Add(collision.collider);
+
+            //foreach (var currentPoint in collision.contacts)
+            //        if (currentPoint.point.y <= _dropCollider.bounds.min.y)
+            //        {
+            //            _groundColliders.Add(collision.collider);
+            //            break;
+            //        }
         }
 
         public void OnCollisionExit2D(Collision2D collision)
@@ -65,6 +82,20 @@ namespace Drop.Movement
             if (collision.gameObject.CompareTag(Tags.GroundTag)
                 && _groundColliders.Contains(collision.collider))
                 _groundColliders.Remove(collision.collider);
+        }
+
+        public void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.TryGetComponent(out IPickable pickable))
+                pickable.Pick(GetComponentInParent<Drop_Controller>());
+        }
+
+        public void ChangeJointsDistance(float percent)
+        {
+            _distanceJoint.distance = _distanceJointDistance * percent;
+
+            for (int i = 0; i < _springJoints.Length; i++)
+                _springJoints[i].distance = _springJointsBaseDistance[i] * percent;
         }
     }
 }
