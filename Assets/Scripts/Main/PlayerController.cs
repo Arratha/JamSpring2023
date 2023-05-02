@@ -52,6 +52,10 @@ namespace Player.Controller
             [SerializeField] private Drop_VisualController _dropVisual;
             [SerializeField] private Drop_ShootingController _dropShooting;
 
+
+            private float _jumpPreparation;
+            private const float MaxJumpPreparation = 1f;
+
             public void Update()
             {
                 Jump();
@@ -66,8 +70,18 @@ namespace Player.Controller
 
             private void Jump()
             {
-                if (Input.GetKeyDown(KeyCode.W))
-                    _dropMove.Jump();
+                if (Input.GetMouseButton(0))
+                    _jumpPreparation = Mathf.Min(MaxJumpPreparation, _jumpPreparation + Time.deltaTime);
+                else
+                    _jumpPreparation = Mathf.Max(0, _jumpPreparation - 3 * Time.deltaTime);
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    _dropMove.Jump(Input.mousePosition, _jumpPreparation);
+                    _jumpPreparation = 0;
+                }
+
+                _dropVisual.Shrink(_jumpPreparation / MaxJumpPreparation);
             }
 
             private void Move()
@@ -83,7 +97,7 @@ namespace Player.Controller
 
             private void Shoot()
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(1))
                     _dropShooting.Shoot(Input.mousePosition);
             }
         }
