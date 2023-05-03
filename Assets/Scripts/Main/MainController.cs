@@ -8,6 +8,11 @@ namespace Main.Controller
     {
         private LevelController _level = new LevelController();
 
+        private void Awake()
+        {
+            _level.Awake();
+        }
+
         private void Update()
         {
             _level.Update();
@@ -15,10 +20,21 @@ namespace Main.Controller
 
         private class LevelController
         {
+            public void Awake()
+            {
+                InitializeLayers();
+            }
+
             public void Update()
             {
                 ResetScene();
                 Exit();
+            }
+
+            private void InitializeLayers()
+            {
+                Physics2D.IgnoreLayerCollision(7, 8, true);
+                Physics2D.IgnoreLayerCollision(8, 8, true);
             }
 
             private void ResetScene()

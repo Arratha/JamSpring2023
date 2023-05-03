@@ -7,15 +7,13 @@ using Drop;
 
 namespace Pickables
 {
-    public class Pickable_DropOfWater : MonoBehaviour, IPickable
+    public class Pickable_Knife : MonoBehaviour, IPickable
     {
         public event Action<Drop_Controller> OnPicked;
 
         public void Pick(Drop_Controller controller)
         {
-            controller.DropCondition.TryChangeWaterCount(1);
-
-            Destroy(transform.parent.gameObject);
+            OnPicked?.Invoke(controller);
         }
     }
 }
