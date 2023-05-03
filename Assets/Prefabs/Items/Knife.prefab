@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 5933859071755240122}
   - component: {fileID: 392185118}
   m_Layer: 8
-  m_Name: Knife_Pickable
+  m_Name: Knife
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

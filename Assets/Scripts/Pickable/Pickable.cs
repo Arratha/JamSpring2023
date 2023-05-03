@@ -7,7 +7,7 @@ using Drop;
 
 namespace Pickables
 {
-    public class Pickable_Knife : MonoBehaviour, IPickable
+    public class Pickable : MonoBehaviour, IPickable
     {
         public event Action<Drop_Controller> OnPicked;
 

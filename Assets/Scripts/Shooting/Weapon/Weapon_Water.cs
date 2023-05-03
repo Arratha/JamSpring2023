@@ -26,7 +26,7 @@ namespace Shooting.Weapon
                 return;
 
             Vector2 modifiedPosition = new Vector2(mousePosition.x * Random.Range(0.95f, 1.05f), mousePosition.y * Random.Range(0.95f, 1.05f));
-            Vector2 targetVector = (Camera.main.ScreenToWorldPoint(modifiedPosition) - _shootingPointTransform.position).normalized;
+            Vector2 targetVector = (Camera.main.ScreenToWorldPoint(modifiedPosition) - _shootingPointTransform.position);
 
             Rigidbody2D projectile = Object.Instantiate(_projectilePrefab, _shootingPointTransform.position, new Quaternion(0, 0, 0, 0));
 

@@ -34,7 +34,7 @@ namespace Main.Controller
             private void InitializeLayers()
             {
                 Physics2D.IgnoreLayerCollision(7, 8, true);
-                Physics2D.IgnoreLayerCollision(8, 8, true);
+                //Physics2D.IgnoreLayerCollision(8, 8, true);
             }
 
             private void ResetScene()
