@@ -20,7 +20,8 @@ namespace Drop.Shooting
         {
             _shootingPointTransform = transform;
 
-            AddWeapon(new Weapon_Water(_baseProjcetilePrefab, _shootingPointTransform));
+            Drop_ConditionController dropCondition = GetComponentInParent<Drop_Controller>().DropCondition;
+            AddWeapon(new Weapon_Water(_baseProjcetilePrefab, _shootingPointTransform, dropCondition));
         }
 
         public void Shoot(Vector2 mousePosition)

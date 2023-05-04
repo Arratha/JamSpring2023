@@ -10,6 +10,8 @@ namespace Items
 {
     public class Firefly_Controller : PickableItem_Controller
     {
+        protected override ProjectileType _projectileType { get; } = ProjectileType.Firefly;
+
         private float _wanderingDelay;
         private const float WanderingMaxDelay = 2f;
 
@@ -19,15 +21,11 @@ namespace Items
 
         private const float Slowdown = 1.03f;
 
-        protected override void Update()
+        protected override void FixedUpdate()
         {
-            base.Update();
+            base.FixedUpdate();
 
             Wandering();
-        }
-
-        private void FixedUpdate()
-        {
             ProjectileSlowdown();
         }
 
@@ -72,6 +70,8 @@ namespace Items
 
                     _pickable.gameObject.SetActive(false);
 
+                    transform.parent = controller.transform;
+
                     AddSpring(controller.DropShooting.GetComponent<Rigidbody2D>());
                     controller.DropShooting.AddWeapon(new Weapon_Firefly(this));
                     break;
@@ -113,7 +113,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot();
+                shootable.Shoot(_projectileType);
         }
 
         protected override void ProjectileDelay()
@@ -127,6 +127,16 @@ namespace Items
 
             if (_wanderingDelay <= 0)
                 ChangeState();
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+
+            if (_centralPosition == null)
+                Gizmos.DrawWireCube(transform.position, MaxOffset);
+            else
+                Gizmos.DrawWireCube((Vector2)_centralPosition, MaxOffset);
         }
     }
 }

@@ -11,15 +11,11 @@ namespace Drop.Movement
     {
         private Rigidbody2D _dropRigidbody;
 
-        //Сила воздействия движения, от нее зависит скорость разгона и скорость разварота
         [SerializeField] private float MoveForce = 5;
-        //Сила, с которой капля отталкивается от поверхности при прыжек
         [SerializeField] private float JumpForce = 400;
 
-        //Максимальная горизонтальная скорость движения
         [SerializeField] private float MaxSpeed = 5f;
 
-        //Угасание движения при остановке капли
         [SerializeField] private float _factorOfFriction = 1.05f;
 
         private bool _isGrounded => _shapePoints.FindAll(x => x.IsGrounded).Count != 0;
@@ -48,6 +44,15 @@ namespace Drop.Movement
             Vector2 targetVector = Camera.main.ScreenToWorldPoint(mousePosition) - _dropBodyTransform.position;
 
             _dropRigidbody.AddForce(targetVector.normalized * JumpForce * prepTime);
+        }
+
+        public void JumpOut(Vector2 targetPosition)
+        {
+            Vector2 dropPosition = _dropBodyTransform.position;
+            Vector2 targetVector = -1 * (targetPosition - dropPosition);
+
+            _dropRigidbody.velocity = Vector2.zero;
+            _dropRigidbody.AddForce(targetVector.normalized * JumpForce);
         }
 
         public void Move(float targetVector)

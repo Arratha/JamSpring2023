@@ -10,6 +10,8 @@ namespace Items
 {
     public class Knife_Controller : PickableItem_Controller
     {
+        protected override ProjectileType _projectileType { get; } = ProjectileType.Knife;
+
         protected override void ChangeState(Drop_Controller controller = null)
         {
             switch (_currentState)
@@ -23,6 +25,8 @@ namespace Items
                     _collider.isTrigger = true;
 
                     _pickable.gameObject.SetActive(false);
+
+                    transform.parent = controller.transform;
 
                     AddSpring(controller.DropShooting.GetComponent<Rigidbody2D>());
                     controller.DropShooting.AddWeapon(new Weapon_Knife(this));
@@ -48,19 +52,19 @@ namespace Items
 
         protected override void WallCollision(Collision2D collision)
         {
+            if (_currentState != ItemState.Projectile && _currentState != ItemState.Item)
+                return;
+
+            if (collision.gameObject.TryGetComponent(out IShootable shootable))
+                shootable.Shoot(_projectileType);
+
             if (_pickableDelay > 0)
                 return;
 
-            switch (_currentState)
-            {
-                case ItemState.Projectile:
-                    ChangeState();
-                    goto case ItemState.Item;
-                case ItemState.Item:
-                    if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                        shootable.Shoot();
-                    break;
-            }
+            if (_currentState != ItemState.Projectile)
+                return;
+            
+            ChangeState();
         }
 
         protected override void TargetCollision(Collider2D collision)
@@ -69,7 +73,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot();
+                shootable.Shoot(_projectileType);
         }
     }
 }
