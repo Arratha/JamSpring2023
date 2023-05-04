@@ -2,30 +2,45 @@ using System;
 
 using UnityEngine;
 
+using Drop.Movement;
+
 
 namespace Drop
 {
     public class Drop_ConditionController : MonoBehaviour
     {
-        private int _waterCount = 10;
+        private int _waterCount = BaseWaterCount;
 
         public const int BaseWaterCount = 10;
         public const int MaxWaterCount = 30;
 
-        public static Predicate<int> OnTryChangeWaterCount;
         public static event Action<int> OnWaterCountChanged;
+
+        private float _invulnerabilitySeconds = 3f;
+        private const float InvulnerabilityMaxSeconds = 1f;
+
+        private Drop_Controller _dropController;
 
         private void Awake()
         {
-            _waterCount = BaseWaterCount;
-
-            OnTryChangeWaterCount += TryChangeWaterCount;
+            _dropController = GetComponentInParent<Drop_Controller>();
         }
 
-        public bool TryChangeWaterCount(int change)
+        private void FixedUpdate()
         {
-            if (_waterCount + change < 0 || _waterCount + change > MaxWaterCount)
+            Invulnerability();
+        }
+
+        public bool TryChangeWaterCount(int change, bool isFored = false)
+        {
+            if (!isFored && (_waterCount + change < 1 || _waterCount + change > MaxWaterCount))
                 return false;
+
+            if (_waterCount + change <= 0)
+            {
+                Death();
+                return false;
+            }
 
             _waterCount += change;
 
@@ -34,9 +49,25 @@ namespace Drop
             return true;
         }
 
-        private void OnDestroy()
+        public void Invulnerability()
         {
-            OnTryChangeWaterCount += TryChangeWaterCount;
+            _invulnerabilitySeconds = Math.Max(_invulnerabilitySeconds - Time.deltaTime, 0);
+        }
+
+        public void DoDamage(Vector2 damageDealerPosition)
+        {
+            if (_invulnerabilitySeconds > 0)
+                return;
+
+            _dropController.DropMove.JumpOut(damageDealerPosition);
+            _invulnerabilitySeconds = InvulnerabilityMaxSeconds;
+
+            TryChangeWaterCount(-1, true);
+        }
+
+        private void Death()
+        {
+            Destroy(_dropController.gameObject);
         }
     }
 }

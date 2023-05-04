@@ -14,7 +14,9 @@ namespace Items
 
     public abstract class PickableItem_Controller : MonoBehaviour
     {
-        protected ItemState _currentState = ItemState.Pickable;
+        protected virtual ProjectileType _projectileType { get; }
+
+        [SerializeField]protected ItemState _currentState = ItemState.Pickable;
 
         protected Rigidbody2D _rigidBody;
         protected Collider2D _collider;
@@ -42,9 +44,13 @@ namespace Items
             _pickable.OnPicked += Pick;
         }
 
-        protected virtual void Update()
+        private void Update()
         {
             SpringReinforcement();
+        }
+
+        protected virtual void FixedUpdate()
+        {
             ProjectileDelay();
         }
 
@@ -54,7 +60,7 @@ namespace Items
                 ChangeState(controller);
         }
 
-        public void Shoot()
+        public virtual void Shoot()
         {
             if (_currentState == ItemState.Item)
                 ChangeState();
