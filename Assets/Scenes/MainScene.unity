@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 22836004}
   - component: {fileID: 22836003}
   - component: {fileID: 22836002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 28498953}
   - component: {fileID: 28498952}
   - component: {fileID: 28498951}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 67652017}
   - component: {fileID: 67652019}
   - component: {fileID: 67652018}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 75702410}
   - component: {fileID: 75702409}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pngwing.com(24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 231835486}
   - component: {fileID: 231835485}
   - component: {fileID: 231835484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 298137109}
   - component: {fileID: 298137108}
   - component: {fileID: 298137107}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -989,7 +989,7 @@ GameObject:
   - component: {fileID: 323261005}
   - component: {fileID: 323261004}
   - component: {fileID: 323261003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (19)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 497824377}
   - component: {fileID: 497824376}
   - component: {fileID: 497824375}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (14)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 570561036}
   - component: {fileID: 570561035}
   - component: {fileID: 570561034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (17)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1537,7 +1537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 637939887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Layer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 638800971}
   - component: {fileID: 638800970}
   - component: {fileID: 638800969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (15)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1731,7 +1731,7 @@ GameObject:
   - component: {fileID: 680354997}
   - component: {fileID: 680354996}
   - component: {fileID: 680354995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1862,7 +1862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702296982}
   - component: {fileID: 702296981}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pngwing.com(22) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1936,6 +1936,64 @@ Transform:
   m_Father: {fileID: 1267396682}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &724725060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724725061}
+  - component: {fileID: 724725062}
+  m_Layer: 9
+  m_Name: Collider (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724725061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724725060}
+  m_LocalRotation: {x: -0, y: -0, z: -0.19759442, w: 0.9802839}
+  m_LocalPosition: {x: 2.67, y: -4.93, z: 0}
+  m_LocalScale: {x: 0.36294973, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1481359847}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22.793}
+--- !u!61 &724725062
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724725060}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4, y: 0.39}
+  m_EdgeRadius: 0
 --- !u!1 &772084766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +2006,7 @@ GameObject:
   - component: {fileID: 772084770}
   - component: {fileID: 772084769}
   - component: {fileID: 772084768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (15)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2080,7 +2138,7 @@ GameObject:
   - component: {fileID: 778766705}
   - component: {fileID: 778766707}
   - component: {fileID: 778766706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (5)"
   m_TagString: Ground
@@ -2227,7 +2285,7 @@ GameObject:
   - component: {fileID: 806570731}
   - component: {fileID: 806570730}
   - component: {fileID: 806570729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,7 +2416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863103224}
   - component: {fileID: 863103223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pngwing.com(22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2444,7 +2502,7 @@ GameObject:
   - component: {fileID: 863806745}
   - component: {fileID: 863806744}
   - component: {fileID: 863806743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (14)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2575,7 +2633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895287749}
   - component: {fileID: 895287748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Frog_PNG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2661,7 +2719,7 @@ GameObject:
   - component: {fileID: 906013910}
   - component: {fileID: 906013909}
   - component: {fileID: 906013908}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2676,17 +2734,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906013906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.4277291}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.66264665, y: 0.66264665, z: 0.66264665}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 67652017}
-  m_Father: {fileID: 1481359847}
-  m_RootOrder: 16
+  m_Father: {fileID: 1057920023}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -14.092331, y: -1.6441934}
+  m_AnchoredPosition: {x: 0.5, y: 0.49594998}
   m_SizeDelta: {x: 1.2428, y: 1.0081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906013908
@@ -2762,7 +2820,7 @@ GameObject:
   - component: {fileID: 967088143}
   - component: {fileID: 967088142}
   - component: {fileID: 967088141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (18)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2883,6 +2941,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &972041336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972041337}
+  - component: {fileID: 972041338}
+  m_Layer: 9
+  m_Name: Collider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972041337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972041336}
+  m_LocalRotation: {x: -0, y: -0, z: -0.036063302, w: 0.99934953}
+  m_LocalPosition: {x: -3.56, y: -3.51, z: 0}
+  m_LocalScale: {x: 0.6886699, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1481359847}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.133}
+--- !u!61 &972041338
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972041336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4, y: 0.39}
+  m_EdgeRadius: 0
 --- !u!1 &1038847004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,7 +3011,7 @@ GameObject:
   - component: {fileID: 1038847008}
   - component: {fileID: 1038847007}
   - component: {fileID: 1038847006}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (16)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3126,7 +3242,7 @@ GameObject:
   - component: {fileID: 1057920023}
   - component: {fileID: 1057920025}
   - component: {fileID: 1057920024}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3144,7 +3260,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -2.4277291}
   m_LocalScale: {x: 1.5091, y: 1.5091, z: 1.5091}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 906013907}
   m_Father: {fileID: 1481359847}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3223,7 +3340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117994502}
   - component: {fileID: 1117994501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pngwing.com(23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3309,7 +3426,7 @@ GameObject:
   - component: {fileID: 1164738247}
   - component: {fileID: 1164738246}
   - component: {fileID: 1164738245}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3540,13 +3657,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1267396682}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Layer_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1267396682
 Transform:
   m_ObjectHideFlags: 0
@@ -3580,13 +3697,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1272348251}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Layer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1272348251
 Transform:
   m_ObjectHideFlags: 0
@@ -3604,6 +3721,7 @@ Transform:
   - {fileID: 1737487592953209668}
   - {fileID: 75702410}
   - {fileID: 1308293538}
+  - {fileID: 1399004016}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4055,7 +4173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1308293538}
   - component: {fileID: 1308293537}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Drop (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4140,7 +4258,7 @@ GameObject:
   - component: {fileID: 1366930638}
   - component: {fileID: 1366930640}
   - component: {fileID: 1366930639}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (5)"
   m_TagString: Ground
@@ -4287,7 +4405,7 @@ GameObject:
   - component: {fileID: 1399004019}
   - component: {fileID: 1399004018}
   - component: {fileID: 1399004017}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wall (16)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4302,12 +4420,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399004015}
   m_LocalRotation: {x: -0, y: -0, z: 0.2887918, w: 0.9573919}
-  m_LocalPosition: {x: 20.32, y: -2.2, z: -2.4061155}
-  m_LocalScale: {x: 14.904367, y: 5.450776, z: 0.8573748}
+  m_LocalPosition: {x: 7.191023, y: -1.5446067, z: -2.3966289}
+  m_LocalScale: {x: 14.904367, y: 5.4507766, z: 0.8573748}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1481359847}
-  m_RootOrder: 18
+  m_Father: {fileID: 1272348251}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33.571}
 --- !u!61 &1399004017
 BoxCollider2D:
@@ -4408,6 +4526,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1433060717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433060718}
+  - component: {fileID: 1433060719}
+  m_Layer: 9
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433060718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433060717}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.2, y: -3.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1481359847}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1433060719
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433060717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.89, y: 0.39}
+  m_EdgeRadius: 0
 --- !u!1 &1450996070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,7 +4596,7 @@ GameObject:
   - component: {fileID: 1450996074}
   - component: {fileID: 1450996073}
   - component: {fileID: 1450996072}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4550,7 +4726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481359847}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Layer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4585,9 +4761,11 @@ Transform:
   - {fileID: 570561033}
   - {fileID: 967088140}
   - {fileID: 1057920023}
-  - {fileID: 906013907}
   - {fileID: 1612918950}
-  - {fileID: 1399004016}
+  - {fileID: 1433060718}
+  - {fileID: 972041337}
+  - {fileID: 1574299831}
+  - {fileID: 724725061}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4602,7 +4780,7 @@ GameObject:
   - component: {fileID: 1484397939}
   - component: {fileID: 1484397941}
   - component: {fileID: 1484397940}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4782,7 +4960,7 @@ GameObject:
   - component: {fileID: 1524528243}
   - component: {fileID: 1524528242}
   - component: {fileID: 1524528241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4903,6 +5081,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1574299830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574299831}
+  - component: {fileID: 1574299832}
+  m_Layer: 9
+  m_Name: Collider (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574299831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574299830}
+  m_LocalRotation: {x: -0, y: -0, z: -0.12809733, w: 0.9917616}
+  m_LocalPosition: {x: -0.010000229, y: -4.13, z: 0}
+  m_LocalScale: {x: 0.68867004, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1481359847}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -14.719}
+--- !u!61 &1574299832
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574299830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.4, y: 0.39}
+  m_EdgeRadius: 0
 --- !u!1 &1596908753
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,7 +5151,7 @@ GameObject:
   - component: {fileID: 1596908757}
   - component: {fileID: 1596908756}
   - component: {fileID: 1596908755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (18)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5048,7 +5284,7 @@ GameObject:
   - component: {fileID: 1612918953}
   - component: {fileID: 1612918952}
   - component: {fileID: 1612918951}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5068,7 +5304,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1481359847}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1612918951
 BoxCollider2D:
@@ -5180,7 +5416,7 @@ GameObject:
   - component: {fileID: 1636097486}
   - component: {fileID: 1636097485}
   - component: {fileID: 1636097484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5280,7 +5516,7 @@ GameObject:
   - component: {fileID: 1763294945}
   - component: {fileID: 1763294944}
   - component: {fileID: 1763294943}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5412,7 +5648,7 @@ GameObject:
   - component: {fileID: 1834492589}
   - component: {fileID: 1834492591}
   - component: {fileID: 1834492590}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (6)"
   m_TagString: Ground
@@ -5559,7 +5795,7 @@ GameObject:
   - component: {fileID: 1848751891}
   - component: {fileID: 1848751890}
   - component: {fileID: 1848751889}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5692,7 +5928,7 @@ GameObject:
   - component: {fileID: 1924645414}
   - component: {fileID: 1924645413}
   - component: {fileID: 1924645412}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5825,7 +6061,7 @@ GameObject:
   - component: {fileID: 1977831851}
   - component: {fileID: 1977831850}
   - component: {fileID: 1977831849}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (19)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5958,7 +6194,7 @@ GameObject:
   - component: {fileID: 2089301723}
   - component: {fileID: 2089301722}
   - component: {fileID: 2089301721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6205,7 +6441,7 @@ GameObject:
   - component: {fileID: 1737487592551125980}
   - component: {fileID: 1737487592551125981}
   - component: {fileID: 1737487592551125986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6291,7 +6527,7 @@ GameObject:
   - component: {fileID: 1737487592603525357}
   - component: {fileID: 1737487592603525362}
   - component: {fileID: 1737487592603525363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6483,7 +6719,7 @@ GameObject:
   - component: {fileID: 1737487592713796895}
   - component: {fileID: 1737487592713796892}
   - component: {fileID: 1737487592713796893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (4)"
   m_TagString: Ground
@@ -6629,7 +6865,7 @@ GameObject:
   - component: {fileID: 1737487592744754519}
   - component: {fileID: 1737487592744754516}
   - component: {fileID: 1737487592744754517}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (5)"
   m_TagString: Ground
@@ -6763,7 +6999,7 @@ GameObject:
   - component: {fileID: 1737487592749685163}
   - component: {fileID: 1737487592749685160}
   - component: {fileID: 1737487592749685161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6849,7 +7085,7 @@ GameObject:
   - component: {fileID: 1737487592822852045}
   - component: {fileID: 1737487592822852050}
   - component: {fileID: 1737487592822852051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -6974,7 +7210,7 @@ GameObject:
   - component: {fileID: 1737487592842358130}
   - component: {fileID: 1737487592842358131}
   - component: {fileID: 1737487592842358128}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (6)"
   m_TagString: Ground
@@ -7060,7 +7296,7 @@ GameObject:
   - component: {fileID: 1737487592880958975}
   - component: {fileID: 1737487592880958972}
   - component: {fileID: 1737487592880958973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (2)"
   m_TagString: Ground
@@ -7321,7 +7557,7 @@ GameObject:
   - component: {fileID: 1737487592952689503}
   - component: {fileID: 1737487592952689500}
   - component: {fileID: 1737487592952689501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -7466,7 +7702,7 @@ GameObject:
   - component: {fileID: 1737487592953209668}
   - component: {fileID: 1737487592953209669}
   - component: {fileID: 1737487592953209674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (4)"
   m_TagString: Ground
@@ -7600,7 +7836,7 @@ GameObject:
   - component: {fileID: 1737487592998304788}
   - component: {fileID: 1737487592998304789}
   - component: {fileID: 1737487592998304790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -7745,7 +7981,7 @@ GameObject:
   - component: {fileID: 1737487593090341740}
   - component: {fileID: 1737487593090341741}
   - component: {fileID: 1737487593090341746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (3)"
   m_TagString: Ground
@@ -7879,7 +8115,7 @@ GameObject:
   - component: {fileID: 1737487593109335155}
   - component: {fileID: 1737487593109335152}
   - component: {fileID: 1737487593109335153}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -7965,7 +8201,7 @@ GameObject:
   - component: {fileID: 1737487593203538205}
   - component: {fileID: 1737487593203538210}
   - component: {fileID: 1737487593203538211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8019,66 +8255,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!60 &1737487593291988960
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737487593291988961}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 1.99}
-    newSize: {x: 5.12, y: 1.99}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.9399999, y: -0.66499996}
-      - {x: 1.8499999, y: -0.565}
-      - {x: 1.67, y: -0.33499998}
-      - {x: 1.53, y: -0.125}
-      - {x: 1.3399999, y: 0.145}
-      - {x: 1.13, y: 0.415}
-      - {x: 1.06, y: 0.48499998}
-      - {x: 0.90999997, y: 0.645}
-      - {x: 0.75, y: 0.775}
-      - {x: 0.69, y: 0.815}
-      - {x: 0.35999998, y: 0.97499996}
-      - {x: 0.28, y: 0.98499995}
-      - {x: 0.22999999, y: 0.995}
-      - {x: -0.22999999, y: 0.995}
-      - {x: -0.28, y: 0.98499995}
-      - {x: -0.37, y: 0.965}
-      - {x: -0.5, y: 0.91499996}
-      - {x: -0.7, y: 0.815}
-      - {x: -0.76, y: 0.775}
-      - {x: -0.84, y: 0.715}
-      - {x: -0.96, y: 0.60499996}
-      - {x: -1.09, y: 0.475}
-      - {x: -1.23, y: 0.315}
-      - {x: -1.35, y: 0.185}
-      - {x: -1.81, y: -0.465}
-      - {x: -1.9699999, y: -0.655}
-      - {x: -2.1299999, y: -0.805}
-      - {x: -2.31, y: -0.92499995}
-      - {x: -2.47, y: -0.965}
-      - {x: -2.49, y: -0.98499995}
-      - {x: -2.49, y: -0.995}
-      - {x: 2.48, y: -0.995}
-      - {x: 2.47, y: -0.965}
-      - {x: 2.29, y: -0.92499995}
-      - {x: 2.07, y: -0.78499997}
 --- !u!1 &1737487593291988961
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,8 +8265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737487593291988962}
   - component: {fileID: 1737487593291988963}
-  - component: {fileID: 1737487593291988960}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (2)"
   m_TagString: Ground
@@ -8291,7 +8466,7 @@ GameObject:
   - component: {fileID: 1737487593339170948}
   - component: {fileID: 1737487593339170949}
   - component: {fileID: 1737487593339170954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8424,7 +8599,7 @@ GameObject:
   - component: {fileID: 1737487593414349691}
   - component: {fileID: 1737487593414349688}
   - component: {fileID: 1737487593414349689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8557,7 +8732,7 @@ GameObject:
   - component: {fileID: 1737487593429133080}
   - component: {fileID: 1737487593429133081}
   - component: {fileID: 1737487593429133086}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8635,7 +8810,7 @@ GameObject:
   - component: {fileID: 1737487593797674890}
   - component: {fileID: 1737487593797674891}
   - component: {fileID: 1737487593797674885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1"
   m_TagString: Ground
@@ -8781,7 +8956,7 @@ GameObject:
   - component: {fileID: 1737487593848809382}
   - component: {fileID: 1737487593848809383}
   - component: {fileID: 1737487593848809380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (3)"
   m_TagString: Ground
@@ -8994,7 +9169,7 @@ GameObject:
   - component: {fileID: 1737487593914303508}
   - component: {fileID: 1737487593914303509}
   - component: {fileID: 1737487593914303514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Hill_\u041C\u043E\u043D\u0442\u0430\u0436\u043D\u0430\u044F \u043E\u0431\u043B\u0430\u0441\u0442\u044C
     1 (1)"
   m_TagString: Ground
@@ -9081,7 +9256,7 @@ GameObject:
   - component: {fileID: 1737487594326057209}
   - component: {fileID: 1737487594326057214}
   - component: {fileID: 1737487594326057215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9116,53 +9291,6 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737487594326057212}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!50 &1737487594510315236
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737487594510315242}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!61 &1737487594510315237
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737487594510315242}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -9259,9 +9387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737487594510315238}
   - component: {fileID: 1737487594510315239}
-  - component: {fileID: 1737487594510315236}
-  - component: {fileID: 1737487594510315237}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -9347,7 +9473,7 @@ GameObject:
   - component: {fileID: 1737487594580557193}
   - component: {fileID: 1737487594580557198}
   - component: {fileID: 1737487594580557199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
