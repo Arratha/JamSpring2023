@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
 
-using Drop.Shooting.Weapon;
+using Shooting.Weapon;
 
 
 namespace Drop.Shooting
@@ -19,15 +20,23 @@ namespace Drop.Shooting
         {
             _shootingPointTransform = transform;
 
-            _currentWeapon.Add(new Weapon_Water(_baseProjcetilePrefab, _shootingPointTransform));
+            AddWeapon(new Weapon_Water(_baseProjcetilePrefab, _shootingPointTransform));
         }
 
         public void Shoot(Vector2 mousePosition)
         {
-            Vector2 modifiedPosition = new Vector2(mousePosition.x * Random.Range(0.95f, 1.05f), mousePosition.y * Random.Range(0.95f, 1.05f));
-            Vector2 targetVector = (Camera.main.ScreenToWorldPoint(modifiedPosition) - _shootingPointTransform.position).normalized;
+            _currentWeapon[0].Shoot(mousePosition, RemoveWeapon);
+        }
 
-            _currentWeapon[0].Shoot(targetVector, () => _currentWeapon.RemoveAt(0));
+        public void AddWeapon(IWeapon weapon)
+        {
+            _currentWeapon.Insert(0, weapon);
+        }
+
+        private void RemoveWeapon()
+        {
+            _currentWeapon[0] = null;
+            _currentWeapon.RemoveAt(0);
         }
     }
 }

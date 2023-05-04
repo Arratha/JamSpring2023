@@ -1,12 +1,12 @@
 using UnityEngine;
 
 
-namespace Drop.Shooting.Weapon
+namespace Shooting.Weapon
 {
     public delegate void OnRanOutOfAmmunition();
 
     public interface IWeapon
     {
-        public void Shoot(Vector2 target, OnRanOutOfAmmunition callback);
+        public void Shoot(Vector2 mousePosition, OnRanOutOfAmmunition callback);
     }
 }

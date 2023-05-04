@@ -16,8 +16,8 @@ TagManager:
   - UI
   - Projectile
   - Drop
-  - 
-  - 
+  - Pickable
+  - Trigger
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FogOfWar
+    uniqueID: 2497805831
     locked: 0
