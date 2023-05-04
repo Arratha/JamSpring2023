@@ -16,7 +16,8 @@ namespace Objects.Spawner
 #if UNITY_EDITOR
         private void Awake()
         {
-            Prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(gameObject);
+            if (!EditorApplication.isPlayingOrWillChangePlaymode) 
+                Prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(gameObject);
         }
 #endif
     }
