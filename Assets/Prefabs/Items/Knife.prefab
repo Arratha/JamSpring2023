@@ -116,8 +116,8 @@ GameObject:
   - component: {fileID: 5214616833575923093}
   - component: {fileID: 5214616833575923092}
   - component: {fileID: 5214616833575923095}
-  - component: {fileID: 5933859071755240122}
   - component: {fileID: 392185118}
+  - component: {fileID: 5933859071755240122}
   - component: {fileID: -80344094935197666}
   m_Layer: 8
   m_Name: Knife
@@ -274,19 +274,6 @@ PolygonCollider2D:
       - {x: -0.095, y: -2.74}
       - {x: -0.035, y: -2.7}
       - {x: 0.105, y: -2.55}
---- !u!114 &5933859071755240122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5214616833575923097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f591bcdff31da4a93fd0046c88ffe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentState: 0
 --- !u!60 &392185118
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -346,6 +333,19 @@ PolygonCollider2D:
       - {x: -0.095, y: -2.74}
       - {x: -0.035, y: -2.7}
       - {x: 0.105, y: -2.55}
+--- !u!114 &5933859071755240122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214616833575923097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f591bcdff31da4a93fd0046c88ffe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentState: 0
 --- !u!114 &-80344094935197666
 MonoBehaviour:
   m_ObjectHideFlags: 0

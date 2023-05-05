@@ -3,7 +3,6 @@ using UnityEngine;
 using Drop.Movement;
 using Drop.Visuals;
 using Drop.Shooting;
-using Pickables;
 
 
 namespace Drop
@@ -14,6 +13,7 @@ namespace Drop
         public Drop_MoveController DropMove;
         public Drop_VisualController DropVisual;
         public Drop_ShootingController DropShooting;
+        public Drop_MessageController DropMessage;
 
         private float _jumpPreparation;
         private const float MaxJumpPreparation = 1f;
@@ -35,6 +35,7 @@ namespace Drop
         private void MoveParts()
         {
             DropShooting.transform.position = DropMove.transform.position;
+            DropMessage.transform.position = DropMove.transform.position;
         }
 
         private void Jump()

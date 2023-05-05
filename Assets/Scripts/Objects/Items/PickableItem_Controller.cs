@@ -10,13 +10,13 @@ using Pickables;
 
 namespace Items
 {
-    public enum ItemState { Pickable, Projectile, Item }
+    public enum ItemState { Pickable, Projectile, Item, Tadpole }
 
     public abstract class PickableItem_Controller : MonoBehaviour
     {
         protected virtual ProjectileType _projectileType { get; }
 
-        [SerializeField]protected ItemState _currentState = ItemState.Pickable;
+        protected ItemState _currentState = ItemState.Pickable;
 
         protected Rigidbody2D _rigidBody;
         protected Collider2D _collider;
@@ -54,7 +54,7 @@ namespace Items
             ProjectileDelay();
         }
 
-        public void Pick(Drop_Controller controller)
+        public void Pick(Drop_Controller controller, IPickable sender)
         {
             if (_currentState == ItemState.Pickable)
                 ChangeState(controller);

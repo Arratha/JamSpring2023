@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Shooting
 {
-    public enum ProjectileType { DropOfWater, Knife, Firefly }
+    public enum ProjectileType { DropOfWater, Knife, Firefly, Tadpole }
     public delegate void OnShootCallback();
 
     public interface IShootable
