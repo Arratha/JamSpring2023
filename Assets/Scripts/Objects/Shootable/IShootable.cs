@@ -1,3 +1,5 @@
+using System;
+
 using UnityEngine;
 
 
@@ -8,7 +10,8 @@ namespace Shooting
 
     public interface IShootable
     {
-        public void Shoot(ProjectileType type, OnShootCallback callback = null);
+        public void Shoot(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback = null);
+        public event Action<ProjectileType, Vector2, OnShootCallback?> OnShooted;
         public GameObject gameObject { get; }
     }
 }

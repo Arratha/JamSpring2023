@@ -89,7 +89,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot(_projectileType, () => Destroy(gameObject));
+                shootable.Shoot(_projectileType, transform.position, () => Destroy(gameObject));
 
             if (_pickableDelay > 0)
                 return;
@@ -106,7 +106,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot(_projectileType, () => Destroy(gameObject));
+                shootable.Shoot(_projectileType, transform.position, () => Destroy(gameObject));
         }
 
         protected override void ProjectileDelay()

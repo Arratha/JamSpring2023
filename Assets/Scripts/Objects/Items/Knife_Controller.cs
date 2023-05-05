@@ -56,7 +56,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot(_projectileType);
+                shootable.Shoot(_projectileType, transform.position);
 
             if (_pickableDelay > 0)
                 return;
@@ -73,7 +73,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot(_projectileType);
+                shootable.Shoot(_projectileType, transform.position);
         }
     }
 }
