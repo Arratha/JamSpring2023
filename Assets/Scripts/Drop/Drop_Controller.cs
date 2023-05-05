@@ -39,12 +39,12 @@ namespace Drop
 
         private void Jump()
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(1))
                 _jumpPreparation = Mathf.Min(MaxJumpPreparation, _jumpPreparation + Time.deltaTime);
             else
                 _jumpPreparation = Mathf.Max(0, _jumpPreparation - 3 * Time.deltaTime);
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(1))
             {
                 DropMove.Jump(Input.mousePosition, _jumpPreparation);
                 _jumpPreparation = 0;
@@ -66,7 +66,7 @@ namespace Drop
 
         private void Shoot()
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
                 DropShooting.Shoot(Input.mousePosition);
         }
     }
