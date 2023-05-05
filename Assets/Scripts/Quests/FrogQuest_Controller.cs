@@ -1,9 +1,10 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using TMPro;
 
 using Settings.Tags;
-using Drop;
 using Shooting;
 
 
@@ -13,22 +14,24 @@ namespace Quest
     {
         [SerializeField] private TextMeshProUGUI _messageField;
 
-        private IShootable _pickable;
+        private IShootable _shootable;
 
         private string[][] _messages = new string[][] { new string[] { "0", "1", "2" }, new string[] { "3", "4", "5" } };
-        private string[] _getTadpoleMessage = new string[] { "Tod1" };
+        private string[] _getTadpoleMessage = new string[] { "Tad1" };
 
         private int _indexI = 0;
         private int _indexJ = 0;
 
         private bool _isReaded;
-        private bool _isDropInRange;
+        private bool _isDropInRange => _dropColliders.Count > 0;
+        private List<Collider2D> _dropColliders = new List<Collider2D>();
+
 
         private void Awake()
         {
-            _pickable = GetComponentInChildren<IShootable>();
+            _shootable = GetComponentInChildren<IShootable>();
 
-            _pickable.OnShooted += GetTodpole;
+            _shootable.OnShooted += Shooted;
         }
 
         private void Update()
@@ -36,7 +39,7 @@ namespace Quest
             ChangeMessage();
         }
 
-        private void GetTodpole(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback)
+        private void Shooted(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback)
         {
             if (type != ProjectileType.Tadpole)
                 return;
@@ -76,37 +79,45 @@ namespace Quest
             ShowMessage(_messages[_indexI][_indexJ]);
         }
 
+        private void ChangeDropRange()
+        {
+            _messageField.gameObject.SetActive(_isDropInRange);
+
+            if (!_isDropInRange)
+                return;
+
+            if (_isReaded)
+            {
+                _isReaded = false;
+
+                _indexI = Mathf.Min(_indexI + 1, _messages.Length - 1);
+                _indexJ = 0;
+            }
+
+            ShowMessage(_messages[_indexI][_indexJ]);
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag(Tags.DropTag))
-            {
-                _isDropInRange = true;
-                _messageField.gameObject.SetActive(true);
+            if (collision.gameObject.CompareTag(Tags.DropTag)
+                && !_dropColliders.Contains(collision))
+                _dropColliders.Add(collision);
 
-                if (_isReaded)
-                {
-                    _isReaded = false;
-
-                    _indexI = Mathf.Min(_indexI + 1, _messages.Length - 1);
-                    _indexJ = 0;
-                }
-
-                ShowMessage(_messages[_indexI][_indexJ]);
-            }
+            ChangeDropRange();
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag(Tags.DropTag))
-            {
-                _isDropInRange = false;
-                _messageField.gameObject.SetActive(false);
-            }
+            if (collision.gameObject.CompareTag(Tags.DropTag)
+                && _dropColliders.Contains(collision))
+                _dropColliders.Remove(collision);
+
+            ChangeDropRange();
         }
 
         private void OnDestroy()
         {
-            _pickable.OnShooted -= GetTodpole;
+            _shootable.OnShooted -= Shooted;
         }
     }
 }
