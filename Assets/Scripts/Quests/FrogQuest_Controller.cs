@@ -16,7 +16,7 @@ namespace Quest
         private IShootable _pickable;
 
         private string[][] _messages = new string[][] { new string[] { "0", "1", "2" }, new string[] { "3", "4", "5" } };
-        private string[] _getTodpoleMessage = new string[] { "Tod1" };
+        private string[] _getTadpoleMessage = new string[] { "Tod1" };
 
         private int _indexI = 0;
         private int _indexJ = 0;
@@ -43,7 +43,7 @@ namespace Quest
 
             callback?.Invoke();
 
-            ShowMessage(_getTodpoleMessage[Random.Range(0, _getTodpoleMessage.Length)]);
+            ShowMessage(_getTadpoleMessage[Random.Range(0, _getTadpoleMessage.Length)]);
         }
 
         private void ShowMessage(string message)
