@@ -94,11 +94,11 @@ namespace Items
 
         protected override void TargetCollision(Collider2D collision)
         {
-            if (_currentState != ItemState.Item && _currentState != ItemState.Projectile)
+            if (_currentState != ItemState.Projectile)
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot(_projectileType, transform.position);
+                shootable.Shoot(_projectileType, transform.position, () => Destroy(gameObject));
         }
     }
 }

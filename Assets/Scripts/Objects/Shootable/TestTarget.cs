@@ -57,7 +57,7 @@ namespace Shooting
 
         public void Shoot(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback = null)
         {
-            _textField.text = _quotes[type][Random.Range(0, _quotes[type].Length)];
+            _textField.text = _quotes[type][Random.Range(0, _quotes[type].Length - 1)];
 
             callback?.Invoke();
         }
