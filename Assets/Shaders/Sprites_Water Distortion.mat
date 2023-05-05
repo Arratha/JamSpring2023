@@ -32,10 +32,10 @@ Material:
     m_Floats:
     - _DistortionScaleX: 0.37
     - _DistortionScaleY: 0.15
-    - _DistortionScrollX: 0.016
+    - _DistortionScrollX: 0.022
     - _DistortionScrollY: 0.013
-    - _RefractionX: 0.023
-    - _RefractionY: -0.046
+    - _RefractionX: -0.004
+    - _RefractionY: -0.005
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
