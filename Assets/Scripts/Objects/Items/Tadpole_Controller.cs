@@ -58,7 +58,7 @@ namespace Items
                     transform.parent = controller.transform;
 
                     AddSpring(controller.DropShooting.GetComponent<Rigidbody2D>());
-                    controller.DropShooting.AddWeapon(new Weapon_Tadpole(this));
+                    controller.DropShooting.AddWeapon(new Weapon(this, 600));
 
                     _escapeTimer = Random.Range(EscapeTimerMin, EscapeTimerMax);
                     break;
