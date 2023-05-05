@@ -209,12 +209,11 @@ namespace Enemy
 
         private void Shoot(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback = null)
         {
-            callback?.Invoke();
-
             switch (type)
             {
                 case ProjectileType.DropOfWater:
 
+                    callback?.Invoke();
                     Stun(projectilePosition);
 
                     break;
