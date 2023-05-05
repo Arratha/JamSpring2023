@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -7,6 +8,8 @@ using TMPro;
 using Drop;
 using Settings.Tags;
 
+using Random = UnityEngine.Random;
+
 
 namespace Shooting
 {
@@ -14,6 +17,8 @@ namespace Shooting
     public class TestTarget : MonoBehaviour, IShootable
     {
         [SerializeField] private TextMeshProUGUI _textField;
+
+        public event Action<ProjectileType, Vector2, OnShootCallback> OnShooted;
 
         private Dictionary<ProjectileType, string[]> _quotes = new Dictionary<ProjectileType, string[]>
         {
@@ -49,7 +54,8 @@ namespace Shooting
             }
         };
 
-        public void Shoot(ProjectileType type, OnShootCallback callback = null)
+
+        public void Shoot(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback = null)
         {
             _textField.text = _quotes[type][Random.Range(0, _quotes[type].Length)];
 

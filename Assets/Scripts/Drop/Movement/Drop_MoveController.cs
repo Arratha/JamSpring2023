@@ -9,7 +9,6 @@ namespace Drop.Movement
     [RequireComponent(typeof(Transform))]
     public class Drop_MoveController : MonoBehaviour
     {
-        private Rigidbody2D _dropRigidbody;
 
         [SerializeField] private float MoveForce = 5;
         [SerializeField] private float JumpForce = 400;
@@ -23,6 +22,7 @@ namespace Drop.Movement
         private bool _isInCollision => _shapePoints.FindAll(x => x.IsInCollision).Count != 0;
         private List<Drop_ShapePoint> _shapePoints = new List<Drop_ShapePoint>();
 
+        private Rigidbody2D _dropRigidbody;
         private Transform _dropBodyTransform;
 
         private void Awake()

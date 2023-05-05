@@ -113,7 +113,7 @@ namespace Items
                 return;
 
             if (collision.gameObject.TryGetComponent(out IShootable shootable))
-                shootable.Shoot(_projectileType);
+                shootable.Shoot(_projectileType, transform.position);
         }
 
         protected override void ProjectileDelay()
