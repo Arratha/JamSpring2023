@@ -11,7 +11,7 @@ namespace Pickables
     {
         public void Pick(Drop_Controller controller);
 
-        public event Action<Drop_Controller> OnPicked;
+        public event Action<Drop_Controller, IPickable> OnPicked;
         public GameObject gameObject { get; }
     }
 }
