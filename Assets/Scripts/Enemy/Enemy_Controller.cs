@@ -1,8 +1,12 @@
+using System;
+
 using UnityEngine;
 
 using Settings.Tags;
 using Drop;
 using Shooting;
+
+using Random = UnityEngine.Random;
 
 
 namespace Enemy
@@ -47,6 +51,8 @@ namespace Enemy
         private Vector2 _wanderingPosition;
         private Vector2? _wanderingTargetPoint;
         private float _wanderingRange = 2;
+
+        public event Action OnDeath;
 
         private void Awake()
         {
@@ -348,6 +354,9 @@ namespace Enemy
         private void OnDestroy()
         {
             _shootable.OnShooted -= Shoot;
+
+            OnDeath?.Invoke();
+            OnDeath = null;
         }
 
         private void OnDrawGizmos()
