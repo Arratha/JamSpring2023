@@ -13,6 +13,7 @@ namespace Quest
     public class FrogQuest_Controller : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _messageField;
+        [SerializeField] private Animator anim;
         private GameObject _messageBackground;
 
         [Space(10)]
@@ -86,7 +87,7 @@ namespace Quest
 
         private void QuestDone()
         {
-
+            anim.Play("FrogDown_Anim");
         }
 
         private void ShowMessage(string message)
