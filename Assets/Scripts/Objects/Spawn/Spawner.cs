@@ -38,12 +38,12 @@ namespace Objects.Spawner
 
             public ObjectInfo(GameObject objectToRespawn)
             {
-                PrefabInfo info = objectToRespawn.GetComponentInChildren<PrefabInfo>();
+                _objectPrefab = null;
 
-                if (info == null)
+                if (objectToRespawn.TryGetComponent(out PrefabInfo info))
+                    _objectPrefab = info.Prefab;
+                else
                     throw new Exception($"Has no {typeof(PrefabInfo)}: { objectToRespawn }");
-
-                _objectPrefab = info.Prefab;
 
                 _position = objectToRespawn.transform.position;
                 _quaternion = objectToRespawn.transform.rotation;
@@ -51,12 +51,13 @@ namespace Objects.Spawner
 
             public ObjectInfo(GameObject objectToRespawn, Vector2 position)
             {
-                PrefabInfo info = objectToRespawn.GetComponentInChildren<PrefabInfo>();
+                _objectPrefab = null;
 
-                if (info == null)
+                if (objectToRespawn.TryGetComponent(out PrefabInfo info))
+                    _objectPrefab = info.Prefab;
+                else
                     throw new Exception($"Has no {typeof(PrefabInfo)}: { objectToRespawn }");
 
-                _objectPrefab = info.Prefab;
                 _position = position;
                 _quaternion = new Quaternion(0, 0, 0, 0);
             }
