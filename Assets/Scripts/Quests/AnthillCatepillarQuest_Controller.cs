@@ -7,7 +7,9 @@ namespace Quest
 {
     public class AnthillCatepillarQuest_Controller : MonoBehaviour
     {
+        [SerializeField] private GameObject _talckingAnts;
         [SerializeField] private GameObject _catepillar;
+        [SerializeField] private GameObject _caterpillarWithSprite;
 
         [Space(10)]
         [SerializeField] private Enemy_Controller[] _ants;
@@ -30,9 +32,14 @@ namespace Quest
         private void KillAnt()
         {
             _antsCount--;
+            _talckingAnts.SetActive(false);
 
             if (_antsCount == 0)
+            {
                 _catepillar.SetActive(true);
+                _caterpillarWithSprite.GetComponent<Animator>().Play("CaterpillarBoots");
+            }
+                
         }
     }
 }
