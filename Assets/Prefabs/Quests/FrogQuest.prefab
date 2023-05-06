@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4292074121651653279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.2027, y: -1.1947}
+  m_AnchoredPosition: {x: 8.64, y: -1.5}
   m_SizeDelta: {x: 1.6174, y: 1.7694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3457802172687249244
@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.74, y: 4.95}
-  m_SizeDelta: {x: 15.17, y: 2.89}
+  m_AnchoredPosition: {x: 5.4, y: 4.95}
+  m_SizeDelta: {x: 17.52, y: 3.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &9054184648817990991
 Canvas:
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _messageField: {fileID: 9054184650723070955}
-  anim: {fileID: 0}
+  anim: {fileID: 9054184649798618144}
 --- !u!58 &9054184649798618146
 CircleCollider2D:
   m_ObjectHideFlags: 0
