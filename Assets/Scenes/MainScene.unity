@@ -7528,7 +7528,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3509416197262250285, guid: 8f20cfd04d9f6da40ae1cac8e88ab76c, type: 3}
       propertyPath: m_Name
-      value: FogOfWar
+      value: FrogOfWar
       objectReference: {fileID: 0}
     - target: {fileID: 3509416197262250286, guid: 8f20cfd04d9f6da40ae1cac8e88ab76c, type: 3}
       propertyPath: m_Sprite
