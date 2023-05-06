@@ -9,6 +9,8 @@ namespace Drop
     {
         [SerializeField] private TextMeshProUGUI _textField;
 
+        private string[] _helpMessages = new string[] { "Q/E" };
+
         private float _expireTimer;
         private const float FadeTimer = 2;
         private const float ExpireTimerMax = 5;
@@ -33,6 +35,11 @@ namespace Drop
             _expireTimer = ExpireTimerMax;
 
             _textField.text = message;
+        }
+
+        public void ShowHelpMessage(int messageID)
+        {
+            ShowMessage(_helpMessages[messageID]);
         }
     }
 }

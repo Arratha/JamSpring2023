@@ -36,6 +36,7 @@ namespace Quest
                 "ÊÂÀ",
             } 
         };
+
         private string[] _getTadpoleMessage = new string[] { "Tad1" };
 
         private int _indexI = 0;
@@ -44,7 +45,6 @@ namespace Quest
         private bool _isReaded;
         private bool _isDropInRange => _dropColliders.Count > 0;
         private List<Collider2D> _dropColliders = new List<Collider2D>();
-
 
         private void Awake()
         {
@@ -104,6 +104,8 @@ namespace Quest
 
             if (!_isDropInRange)
                 return;
+
+            _dropColliders[0].GetComponentInParent<Drop.Drop_Controller>().DropMessage.ShowHelpMessage(0);
 
             if (_isReaded)
             {
