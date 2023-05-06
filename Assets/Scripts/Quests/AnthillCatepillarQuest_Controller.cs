@@ -31,6 +31,9 @@ namespace Quest
 
         private void KillAnt()
         {
+            if (_talckingAnts == null)
+                return;
+
             _antsCount--;
             _talckingAnts.SetActive(false);
 
@@ -39,7 +42,6 @@ namespace Quest
                 _catepillar.SetActive(true);
                 _caterpillarWithSprite.GetComponent<Animator>().Play("CaterpillarBoots");
             }
-                
         }
     }
 }

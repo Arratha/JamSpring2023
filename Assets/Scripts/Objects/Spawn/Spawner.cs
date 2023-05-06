@@ -40,9 +40,6 @@ namespace Objects.Spawner
             {
                 PrefabInfo info = objectToRespawn.GetComponentInChildren<PrefabInfo>();
 
-                if (info == null)
-                    throw new Exception($"Has no {typeof(PrefabInfo)}: { objectToRespawn }");
-
                 _objectPrefab = info.Prefab;
 
                 _position = objectToRespawn.transform.position;
@@ -52,9 +49,6 @@ namespace Objects.Spawner
             public ObjectInfo(GameObject objectToRespawn, Vector2 position)
             {
                 PrefabInfo info = objectToRespawn.GetComponentInChildren<PrefabInfo>();
-
-                if (info == null)
-                    throw new Exception($"Has no {typeof(PrefabInfo)}: { objectToRespawn }");
 
                 _objectPrefab = info.Prefab;
                 _position = position;
