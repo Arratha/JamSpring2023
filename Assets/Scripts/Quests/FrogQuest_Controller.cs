@@ -55,7 +55,7 @@ namespace Quest
         private int _indexJ = 0;
 
         private bool _isReaded;
-        private bool _isDropInRange => _dropColliders.Count > 0;
+        private bool _isDropInRange;
         private List<Collider2D> _dropColliders = new List<Collider2D>();
 
         private bool _isQuestDone;
@@ -84,16 +84,25 @@ namespace Quest
 
             callback?.Invoke();
 
-            ShowMessage(_getTadpoleMessage[_tadpoleCount]);
-            _tadpoleCount++;
 
-            if (_tadpoleCount == _neededTadpoleCount)
-                QuestDone();
+            if (_tadpoleCount == _neededTadpoleCount - 1)
+                StartCoroutine(QuestDone());
+            else
+            {
+                ShowMessage(_getTadpoleMessage[_tadpoleCount]);
+                _tadpoleCount++;
+            }
         }
 
-        private void QuestDone()
+        private IEnumerator QuestDone()
         {
             _isQuestDone = true;
+
+            ShowMessage(_getTadpoleMessage[_tadpoleCount]);
+            yield return ShowMessageTemporary();
+
+            TurnColliderOffRecursively(transform);
+
             anim.Play("FrogDown_Anim");
         }
 
@@ -105,17 +114,29 @@ namespace Quest
             _messageField.text = message;
         }
 
+        private void TurnColliderOffRecursively(Transform obj)
+        {
+            for (int i = 0; i < obj.childCount; i++)
+                TurnColliderOffRecursively(obj.GetChild(i));
+
+            if (TryGetComponent(out Collider2D collider))
+                collider.enabled = false;
+        }
+
         private IEnumerator ShowMessageTemporary()
         {
             _messageBackground.SetActive(true);
 
             yield return new WaitForSeconds(3);
 
-            _messageBackground.SetActive(_isDropInRange);
+            _messageBackground.SetActive(_isDropInRange && !_isQuestDone);
         }
 
         private void ChangeMessage()
         {
+            if (_isQuestDone)
+                return;
+
             if (!_isDropInRange)
                 return;
 
@@ -141,9 +162,9 @@ namespace Quest
 
         private void ChangeDropRange()
         {
-            _messageBackground.SetActive(_isDropInRange);
+            _messageBackground.SetActive(_isDropInRange && !_isQuestDone);
 
-            if (!_isDropInRange)
+            if (!_isDropInRange || _isQuestDone)
                 return;
 
             if (_isReaded)
@@ -163,7 +184,11 @@ namespace Quest
                 && !_dropColliders.Contains(collision))
                 _dropColliders.Add(collision);
 
-            ChangeDropRange();
+            if (_isDropInRange != _dropColliders.Count > 0)
+            {
+                _isDropInRange = _dropColliders.Count > 0;
+                ChangeDropRange();
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -172,7 +197,11 @@ namespace Quest
                 && _dropColliders.Contains(collision))
                 _dropColliders.Remove(collision);
 
-            ChangeDropRange();
+            if (_isDropInRange != _dropColliders.Count > 0)
+            {
+                _isDropInRange = _dropColliders.Count > 0;
+                ChangeDropRange();
+            }
         }
 
         private void OnDestroy()
