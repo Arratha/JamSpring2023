@@ -12,7 +12,7 @@ namespace Quest
     public class AnthillQuest_Controller : MonoBehaviour
     {
         [SerializeField] private GameObject _rewardPrefab;
-        [SerializeField] private Vector3 _rewardCreationPoint;
+        [SerializeField] private Transform _rewardCreationPoint;
 
         private GameObject _reward;
 
@@ -57,7 +57,7 @@ namespace Quest
 
         private void CreateReward()
         {
-            _reward = Instantiate(_rewardPrefab, _rewardCreationPoint, new Quaternion(0, 0, 0, 0));
+            _reward = Instantiate(_rewardPrefab, _rewardCreationPoint.position, new Quaternion(0, 0, 0, 0));
         }
     }
 }
