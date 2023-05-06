@@ -46,7 +46,7 @@ namespace Quest
         private int _indexI = 0;
         private int _indexJ = 0;
 
-        private bool _isDropInRange => _dropColliders.Count > 0;
+        private bool _isDropInRange;
         private List<Collider2D> _dropColliders = new List<Collider2D>();
 
         private bool _isShooted;
@@ -161,7 +161,11 @@ namespace Quest
                 && !_dropColliders.Contains(collision))
                 _dropColliders.Add(collision);
 
-            ChangeDropRange();
+            if (_isDropInRange != _dropColliders.Count > 0)
+            {
+                _isDropInRange = _dropColliders.Count > 0;
+                ChangeDropRange();
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -170,7 +174,11 @@ namespace Quest
                 && _dropColliders.Contains(collision))
                 _dropColliders.Remove(collision);
 
-            ChangeDropRange();
+            if (_isDropInRange != _dropColliders.Count > 0)
+            {
+                _isDropInRange = _dropColliders.Count > 0;
+                ChangeDropRange();
+            }
         }
 
         private void OnDestroy()
