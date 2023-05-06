@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8122159398417445783}
   - component: {fileID: 7035302735064404422}
   - component: {fileID: 325731576}
-  - component: {fileID: 4779326434720037122}
   m_Layer: 8
   m_Name: Firefly
   m_TagString: Projectile
@@ -262,19 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab600d527fde0174ea19de3f1c24d0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4779326434720037122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4695024004796103603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5cb7cbcc836451418c8366d8dbfe369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
 --- !u!1 &6270196338930449957
 GameObject:
   m_ObjectHideFlags: 0

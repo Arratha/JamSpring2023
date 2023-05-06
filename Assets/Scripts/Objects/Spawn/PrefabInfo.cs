@@ -11,13 +11,13 @@ namespace Objects.Spawner
     [ExecuteInEditMode]
     public class PrefabInfo : MonoBehaviour
     {
-        [HideInInspector] public GameObject Prefab;
+        public GameObject Prefab;
 
 #if UNITY_EDITOR
         private void Awake()
         {
-            if (!EditorApplication.isPlayingOrWillChangePlaymode) 
-                Prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(gameObject);
+            if (!EditorApplication.isPlayingOrWillChangePlaymode && transform.parent != null) 
+                Prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(transform.parent.gameObject);
         }
 #endif
     }
