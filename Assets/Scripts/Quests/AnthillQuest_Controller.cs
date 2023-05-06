@@ -13,7 +13,6 @@ namespace Quest
     {
         [SerializeField] private GameObject _rewardPrefab;
         [SerializeField] private Vector3 _rewardCreationPoint;
-        [SerializeField] private GameObject _drop;
 
         private GameObject _reward;
 
@@ -58,7 +57,6 @@ namespace Quest
 
         private void CreateReward()
         {
-            _rewardCreationPoint = _drop.transform.position + new Vector3(0,0,10);
             _reward = Instantiate(_rewardPrefab, _rewardCreationPoint, new Quaternion(0, 0, 0, 0));
         }
     }
