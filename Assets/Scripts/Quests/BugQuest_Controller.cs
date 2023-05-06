@@ -15,6 +15,7 @@ namespace Quest
     {
         [SerializeField] private GameObject _rewardPrefab;
         [SerializeField] private Transform _rewardCreationPoint;
+        [SerializeField] private Sprite _newSprite;
 
         private GameObject _reward;
 
@@ -35,7 +36,8 @@ namespace Quest
             new string[]
             {
                 "О дааа, спасибо тебе, прыгающий пузырик",
-                "Как и обещал, - я же обещал, да? - , самое ценное, что у меня есть - знание! Я его получил от мимо пробегающего волка, так что слушай внимательно.",
+                "Как и обещал, - я же обещал, да? - , самое ценное, что у меня есть - знание!",
+                "Я его получил от мимо пробегающего волка, так что слушай внимательно.",
                 "Звучит оно так кхм:\n В какой форме вода приобретает самую большую силу?",
                 "В форме женских слёз. Ауф",
                 "Что? Тебе этого недостаточно?!",
@@ -91,6 +93,7 @@ namespace Quest
         private void QuestDone()
         {
             _isQuestDone = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = _newSprite;
         }
 
         private void CreateReward()
