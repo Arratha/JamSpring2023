@@ -13,7 +13,6 @@ namespace Quest
     public class FrogQuest_Controller : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _messageField;
-        [SerializeField] private GameObject _dialogueSprite;
 
         private IShootable _shootable;
 
@@ -37,7 +36,8 @@ namespace Quest
                 "КВА",
             } 
         };
-        private string[] _getTadpoleMessage = new string[] { "Мой Биба вернулся! Спасибо, скорее верни мне оставшихся!", "Боба! Радость моя, но где же последний?", "О, похоже на триплет! Спасибо тебе, Капля, теперь мы квиты!..КВА" };
+
+        private string[] _getTadpoleMessage = new string[] { "Tad1" };
 
         private int _indexI = 0;
         private int _indexJ = 0;
@@ -45,7 +45,6 @@ namespace Quest
         private bool _isReaded;
         private bool _isDropInRange => _dropColliders.Count > 0;
         private List<Collider2D> _dropColliders = new List<Collider2D>();
-
 
         private void Awake()
         {
@@ -72,7 +71,6 @@ namespace Quest
         private void ShowMessage(string message)
         {
             _messageField.text = message;
-
         }
 
         private void ChangeMessage()
@@ -103,10 +101,11 @@ namespace Quest
         private void ChangeDropRange()
         {
             _messageField.gameObject.SetActive(_isDropInRange);
-            _dialogueSprite.gameObject.SetActive(_isDropInRange);
 
             if (!_isDropInRange)
                 return;
+
+            _dropColliders[0].GetComponentInParent<Drop.Drop_Controller>().DropMessage.ShowHelpMessage(0);
 
             if (_isReaded)
             {
