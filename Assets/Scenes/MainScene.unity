@@ -4714,9 +4714,9 @@ GameObject:
   - component: {fileID: 806570731}
   - component: {fileID: 806570730}
   - component: {fileID: 806570729}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Wall (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17078,7 +17078,7 @@ GameObject:
   - component: {fileID: 1737487594326057215}
   m_Layer: 10
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,6 +13,7 @@ namespace Quest
     public class FrogQuest_Controller : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _messageField;
+        [SerializeField] private GameObject _dialogueSprite;
 
         private IShootable _shootable;
 
@@ -36,7 +37,7 @@ namespace Quest
                 "КВА",
             } 
         };
-        private string[] _getTadpoleMessage = new string[] { "Tad1" };
+        private string[] _getTadpoleMessage = new string[] { "Мой Биба вернулся! Спасибо, скорее верни мне оставшихся!", "Боба! Радость моя, но где же последний?", "О, похоже на триплет! Спасибо тебе, Капля, теперь мы квиты!..КВА" };
 
         private int _indexI = 0;
         private int _indexJ = 0;
@@ -71,6 +72,7 @@ namespace Quest
         private void ShowMessage(string message)
         {
             _messageField.text = message;
+            _dialogueSprite.GetComponent<SpriteRenderer>().enabled = !_dialogueSprite.GetComponent<SpriteRenderer>().enabled;
         }
 
         private void ChangeMessage()
