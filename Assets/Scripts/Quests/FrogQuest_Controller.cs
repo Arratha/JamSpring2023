@@ -14,8 +14,8 @@ namespace Quest
     public class FrogQuest_Controller : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _messageField;
-        [SerializeField] private Animator anim;
         private GameObject _messageBackground;
+        [SerializeField] private Animator anim;
 
         [Space(10)]
         private int _neededTadpoleCount = 3;

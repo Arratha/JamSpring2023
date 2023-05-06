@@ -29,7 +29,7 @@ namespace Items
                     transform.parent = controller.transform;
 
                     AddSpring(controller.DropShooting.GetComponent<Rigidbody2D>());
-                    controller.DropShooting.AddWeapon(new Weapon(this, 1000, -500));
+
                     break;
                 case ItemState.Projectile:
                     _currentState = ItemState.Pickable;

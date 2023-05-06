@@ -90,7 +90,16 @@ namespace Items
 
         protected void SpringReinforcement()
         {
-            if (_springJoint == null || _springJoint.distance <= _minDistance)
+            if (_springJoint == null)
+                return;
+
+            if (_currentState == ItemState.Item && _springJoint.connectedBody == null)
+            {
+                ChangeState();
+                return;
+            }
+
+            if (_springJoint.distance <= _minDistance)
                 return;
 
             _springJoint.distance = Mathf.Max(_springJoint.distance - Time.deltaTime * 5, _minDistance);

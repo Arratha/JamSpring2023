@@ -18,18 +18,33 @@ namespace Drop
         private float _jumpPreparation;
         private const float MaxJumpPreparation = 1f;
 
-        public void Update()
+        private bool _hasControl = true;
+
+        private void Update()
         {
+            MoveParts();
+
+            if (!_hasControl)
+                return;
+
             Jump();
             Shoot();
-
-            MoveParts();
         }
 
-        public void FixedUpdate()
+        private void FixedUpdate()
         {
+            if (!_hasControl)
+                return;
+
             Move();
             Stop();
+        }
+
+        public void RemoveControl()
+        {
+            _hasControl = false;
+
+            DropMove.RemovePhysics();
         }
 
         private void MoveParts()

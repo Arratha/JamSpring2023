@@ -55,8 +55,6 @@ namespace Items
 
                     _pickable.gameObject.SetActive(false);
 
-                    transform.parent = controller.transform;
-
                     AddSpring(controller.DropShooting.GetComponent<Rigidbody2D>());
                     controller.DropShooting.AddWeapon(new Weapon(this, 600));
 
