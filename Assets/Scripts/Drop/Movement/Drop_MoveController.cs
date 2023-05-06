@@ -9,7 +9,6 @@ namespace Drop.Movement
     [RequireComponent(typeof(Transform))]
     public class Drop_MoveController : MonoBehaviour
     {
-
         [SerializeField] private float MoveForce = 5;
         [SerializeField] private float JumpForce = 400;
 
@@ -85,6 +84,20 @@ namespace Drop.Movement
 
             foreach (var currentPoint in _shapePoints)
                 currentPoint.GetComponent<Rigidbody2D>().gravityScale = gravity;
+        }
+
+        public void RemovePhysics()
+        {
+            _dropRigidbody.bodyType = RigidbodyType2D.Kinematic;
+            _dropRigidbody.velocity = Vector2.zero;
+            GetComponent<Collider2D>().isTrigger = true;
+
+            foreach (var currentPoint in _shapePoints)
+            {
+                currentPoint.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                currentPoint.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                currentPoint.GetComponent<Collider2D>().isTrigger = true;
+            }
         }
     }
 }

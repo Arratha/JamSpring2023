@@ -12,6 +12,8 @@ namespace Quest
 
         private IShootable _shootable;
 
+        private bool _isQuestDone;
+
         private void Awake()
         {
             _shootable = GetComponentInChildren<IShootable>();
@@ -21,18 +23,30 @@ namespace Quest
 
         private void Shooted(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback)
         {
-            Debug.Log("Shoot");
+            if (_isQuestDone)
+                return;
 
             if (type != ProjectileType.DropOfWater)
                 return;
 
-            if (type == ProjectileType.DropOfWater)
-            {
-                _collider1.isTrigger = false;
-                _collider2.isTrigger = false;
-                anim.Play("SunFlower_Rise");
-            }
-            
+            QuestDone();
+        }
+
+        public void ForcedQuestDone()
+        {
+            if (_isQuestDone)
+                return;
+
+            QuestDone();
+        }
+
+        private void QuestDone()
+        {
+            _isQuestDone = true;
+
+            _collider1.isTrigger = false;
+            _collider2.isTrigger = false;
+            anim.Play("SunFlower_Rise");
         }
 
         private void OnDestroy()

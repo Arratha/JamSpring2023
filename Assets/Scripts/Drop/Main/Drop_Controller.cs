@@ -14,28 +14,37 @@ namespace Drop
         public Drop_VisualController DropVisual;
         public Drop_ShootingController DropShooting;
         public Drop_MessageController DropMessage;
-        private AudioSource _audio;
 
         private float _jumpPreparation;
         private const float MaxJumpPreparation = 1f;
 
-        public void Update()
+        private bool _hasControl = true;
+
+        private void Update()
         {
+            MoveParts();
+
+            if (!_hasControl)
+                return;
+
             Jump();
             Shoot();
-
-            MoveParts();
         }
 
-        public void Awake()
+        private void FixedUpdate()
         {
-            _audio = GetComponent<AudioSource>();
-        }
+            if (!_hasControl)
+                return;
 
-        public void FixedUpdate()
-        {
             Move();
             Stop();
+        }
+
+        public void RemoveControl()
+        {
+            _hasControl = false;
+
+            DropMove.RemovePhysics();
         }
 
         private void MoveParts()
@@ -55,12 +64,9 @@ namespace Drop
             {
                 DropMove.Jump(Input.mousePosition, _jumpPreparation);
                 _jumpPreparation = 0;
-                _audio.Play(0);
             }
 
             DropVisual.GroupUp(_jumpPreparation / MaxJumpPreparation);
-
-
         }
 
         private void Move()

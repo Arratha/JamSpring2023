@@ -31,7 +31,7 @@ namespace Quest
 
         private void KillAnt()
         {
-            if (_talckingAnts == null)
+            if (_talckingAnts == null || _catepillar == null)
                 return;
 
             _antsCount--;
