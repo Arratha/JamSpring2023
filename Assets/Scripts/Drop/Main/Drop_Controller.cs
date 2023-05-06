@@ -20,6 +20,8 @@ namespace Drop
 
         private bool _hasControl = true;
 
+        [SerializeField] private AudioSource _audio;
+
         private void Update()
         {
             MoveParts();
@@ -69,9 +71,11 @@ namespace Drop
             {
                 DropMove.Jump(Input.mousePosition, _jumpPreparation);
                 _jumpPreparation = 0;
+                _audio.Play();
             }
 
             DropVisual.GroupUp(_jumpPreparation / MaxJumpPreparation);
+            
         }
 
         private void Move()
