@@ -78,5 +78,13 @@ namespace Drop.Movement
             _dropRigidbody.velocity /= _factorOfFriction;
             _shapePoints.ForEach(x => x.Velocity /= _factorOfFriction);
         }
+
+        public void SetGravity(float gravity)
+        {
+            _dropRigidbody.gravityScale = gravity;
+
+            foreach (var currentPoint in _shapePoints)
+                currentPoint.GetComponent<Rigidbody2D>().gravityScale = gravity;
+        }
     }
 }

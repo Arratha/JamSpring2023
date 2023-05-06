@@ -11,55 +11,44 @@ using Shooting;
 
 namespace Quest
 {
-    public class FrogQuest_Controller : MonoBehaviour
+    public class BugQuest_Controller : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _messageField;
-        [SerializeField] private Animator anim;
-        private GameObject _messageBackground;
+        [SerializeField] private GameObject _rewardPrefab;
+        [SerializeField] private Transform _rewardCreationPoint;
+
+        private GameObject _reward;
 
         [Space(10)]
-        private int _neededTadpoleCount = 3;
-        private int _tadpoleCount = 0;
+        [SerializeField] private TextMeshProUGUI _messageField;
+        private GameObject _messageBackground;
 
         private IShootable _shootable;
 
-        private string[][] _messages = new string[][] { new string[] 
-        { 
-            "Привет, дорогая Капля! Я рада, что ты оказалась на моей голове.", 
-            "Я заметила, что ты очень живая и быстрая, а это значит, что ты сможешь помочь мне в выполнении задания!", 
-            "Мне нужно поймать головастиков, и я думаю, что ты можешь стать моим лучшим помощником.",
-            "Ты готова к этому вызову?",
-            "...",
-            "Бл*, Chat GPT забыла выключить…КВА",
-            "Короче, Капля, я тебя спасла и в благородство играть не буду: выполнишь для меня задание — и мы в расчете…КВА",
-            "Ах, точно, ты же только родилась, сейчас научу тебя двигаться по этому стра… прекрасному миру",
-            "Итак, A - катиться влево, D - вправо",
-            "Кроме того, ты можешь прыгать! Зажми ПКМ и сделай рывок по направлению своей мышки.",
-            "Что ты на меня так смотришь?! Да, именно так прыгают капли в нашем мире вырванных пробелов.",
-            "Все, катись отсюда и верни мне моих головастиков!..КВА"
-        }, 
-            new string[] 
-            { 
-                "КВА",
-            } 
-        };
-
-        private string[] _getTadpoleMessage = new string[]
+        private string[][] _messages = new string[][]
         {
-            "Мой Биба вернулся! Спасибо, скорее верни мне оставшихся!",
-            "Боба! Радость моя, но где же последний?",
-            "О, похоже на триплет! Спасибо тебе, Капля, теперь мы квиты! Ква" 
+            new string[]
+            {
+                "Господь жучий, как же жарко…",
+                "Ооо, здравствуй мой жидкий друг! Возможно, ты мне и сможешь помочь…",
+                "Да-да, катающаяся желейка, именно ты! Выполни мою просьбу, облей меня водой, и за это, я дам тебе нечто очень ценное…"
+            } ,
+            new string[]
+            {
+                "О дааа, спасибо тебе, прыгающий пузырик",
+                "Как и обещал, самое ценное, что у меня есть - знание! Я его получил от мимо пробегающего волка, так что слушай внимательно. Звучит оно так кхм:”- В какой форме вода приобретает самую большую силу? - В форме женских слёз. Ауф",
+                "Что? Тебе этого недостаточно?! Ну, возьми тогда этот листик, больше мне все равно нечего тебе дать, может пригодится."
+            }
         };
 
         private int _indexI = 0;
         private int _indexJ = 0;
 
-        private bool _isReaded;
         private bool _isDropInRange => _dropColliders.Count > 0;
         private List<Collider2D> _dropColliders = new List<Collider2D>();
 
+        private bool _isShooted;
         private bool _isQuestDone;
-
+        
         private void Awake()
         {
             _messageBackground = _messageField.transform.parent.gameObject;
@@ -72,6 +61,7 @@ namespace Quest
         private void Update()
         {
             ChangeMessage();
+            CreateReward();
         }
 
         private void Shooted(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback)
@@ -79,22 +69,31 @@ namespace Quest
             if (_isQuestDone)
                 return;
 
-            if (type != ProjectileType.Tadpole)
+            if (_isShooted)
                 return;
+
+            if (type != ProjectileType.DropOfWater)
+                return;
+
+            _isShooted = true;
 
             callback?.Invoke();
 
-            ShowMessage(_getTadpoleMessage[_tadpoleCount]);
-            _tadpoleCount++;
+            _indexI = _messages.Length - 1;
+            _indexJ = 0;
 
-            if (_tadpoleCount == _neededTadpoleCount)
-                QuestDone();
+            ShowMessage(_messages[_indexI][_indexJ]);
         }
 
         private void QuestDone()
         {
             _isQuestDone = true;
-            anim.Play("FrogDown_Anim");
+        }
+
+        private void CreateReward()
+        {
+            if (_isQuestDone && _reward == null)
+                _reward = Instantiate(_rewardPrefab, _rewardCreationPoint.position, new Quaternion(0, 0, 0, 0));
         }
 
         private void ShowMessage(string message)
@@ -116,6 +115,9 @@ namespace Quest
 
         private void ChangeMessage()
         {
+            if (_isQuestDone)
+                return;
+
             if (!_isDropInRange)
                 return;
 
@@ -131,8 +133,9 @@ namespace Quest
             if (_indexJ + change < 0 || _indexJ + change > _messages[_indexI].Length - 1)
                 return;
 
-            if (_indexJ + change == _messages[_indexI].Length - 1)
-                _isReaded = transform;
+            if (_indexI == _messages.Length - 1
+                && _indexJ + change == _messages[_indexI].Length - 1)
+                QuestDone();
 
             _indexJ += change;
 
@@ -145,14 +148,6 @@ namespace Quest
 
             if (!_isDropInRange)
                 return;
-
-            if (_isReaded)
-            {
-                _isReaded = false;
-
-                _indexI = Mathf.Min(_indexI + 1, _messages.Length - 1);
-                _indexJ = 0;
-            }
 
             ShowMessage(_messages[_indexI][_indexJ]);
         }

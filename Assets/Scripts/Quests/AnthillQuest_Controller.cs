@@ -19,7 +19,7 @@ namespace Quest
         private List<IPickable> _points;
         private int _pointCount;
 
-        private bool _isEarned;
+        private bool _isQuestDone;
 
         private void Awake()
         {
@@ -28,8 +28,7 @@ namespace Quest
 
         private void FixedUpdate()
         {
-            if (_isEarned && _reward == null)
-                CreateReward();
+            CreateReward();
         }
 
         private void Initialize()
@@ -49,15 +48,13 @@ namespace Quest
             drop.DropMessage.ShowMessage($"{_pointCount - _points.Count}/{_pointCount}");
 
             if (_points.Count == 0)
-            {
-                _isEarned = true;
-                CreateReward();
-            }
+                _isQuestDone = true;
         }
 
         private void CreateReward()
         {
-            _reward = Instantiate(_rewardPrefab, _rewardCreationPoint.position, new Quaternion(0, 0, 0, 0));
+            if (_isQuestDone && _reward == null)
+                _reward = Instantiate(_rewardPrefab, _rewardCreationPoint.position, new Quaternion(0, 0, 0, 0));
         }
     }
 }

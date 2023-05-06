@@ -3,7 +3,6 @@ using UnityEngine;
 using Drop;
 
 using Shooting;
-using Shooting.Weapon;
 
 using Pickables;
 
@@ -22,7 +21,8 @@ namespace Items
         protected Collider2D _collider;
 
         protected SpringJoint2D _springJoint;
-        private const float _minDistance = 0.2f;
+        protected virtual float _minDistance { get; } = 0.2f;
+        protected virtual Vector2? _springAnchor { get; set; } = null;
 
         protected IPickable _pickable;
 
@@ -40,6 +40,9 @@ namespace Items
             _collider = GetComponent<Collider2D>();
 
             _pickable = GetComponentInChildren<IPickable>();
+
+            if (_springAnchor == null)
+                _springAnchor = new Vector2(Random.Range(-0.05f, 0.05f), 0);
 
             _pickable.OnPicked += Pick;
         }
@@ -75,7 +78,7 @@ namespace Items
             _springJoint = gameObject.AddComponent<SpringJoint2D>();
 
             _springJoint.connectedBody = rb;
-            _springJoint.anchor = new Vector2(Random.Range(-0.05f, 0.05f), 0);
+            _springJoint.anchor = (Vector2)_springAnchor;
 
             _springJoint.autoConfigureDistance = false;
             _springJoint.distance = Vector2.Distance(transform.position, rb.transform.position);
