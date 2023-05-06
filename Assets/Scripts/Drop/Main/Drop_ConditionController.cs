@@ -62,7 +62,7 @@ namespace Drop
             _dropController.DropMove.JumpOut(damageDealerPosition);
             _invulnerabilitySeconds = InvulnerabilityMaxSeconds;
 
-            TryChangeWaterCount(-1, true);
+            TryChangeWaterCount(-1);
         }
 
         private void Death()
