@@ -72,7 +72,7 @@ namespace Quest
         private void ShowMessage(string message)
         {
             _messageField.text = message;
-            _dialogueSprite.GetComponent<SpriteRenderer>().enabled = !_dialogueSprite.GetComponent<SpriteRenderer>().enabled;
+
         }
 
         private void ChangeMessage()
@@ -103,6 +103,7 @@ namespace Quest
         private void ChangeDropRange()
         {
             _messageField.gameObject.SetActive(_isDropInRange);
+            _dialogueSprite.gameObject.SetActive(_isDropInRange);
 
             if (!_isDropInRange)
                 return;
