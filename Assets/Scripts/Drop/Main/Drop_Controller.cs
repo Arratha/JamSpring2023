@@ -14,6 +14,7 @@ namespace Drop
         public Drop_VisualController DropVisual;
         public Drop_ShootingController DropShooting;
         public Drop_MessageController DropMessage;
+        private AudioSource _audio;
 
         private float _jumpPreparation;
         private const float MaxJumpPreparation = 1f;
@@ -24,6 +25,11 @@ namespace Drop
             Shoot();
 
             MoveParts();
+        }
+
+        public void Awake()
+        {
+            _audio = GetComponent<AudioSource>();
         }
 
         public void FixedUpdate()
@@ -49,9 +55,12 @@ namespace Drop
             {
                 DropMove.Jump(Input.mousePosition, _jumpPreparation);
                 _jumpPreparation = 0;
+                _audio.Play(0);
             }
 
             DropVisual.GroupUp(_jumpPreparation / MaxJumpPreparation);
+
+
         }
 
         private void Move()
