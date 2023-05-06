@@ -40,6 +40,11 @@ namespace Drop
             Stop();
         }
 
+        public void SetControl(bool isActive)
+        {
+            _hasControl = isActive;
+        }
+
         public void RemoveControl()
         {
             _hasControl = false;
