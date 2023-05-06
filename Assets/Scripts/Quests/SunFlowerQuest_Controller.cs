@@ -28,8 +28,8 @@ namespace Quest
 
             if (type == ProjectileType.DropOfWater)
             {
-                _collider1.enabled = !_collider1.enabled;
-                _collider2.enabled = !_collider2.enabled;
+                _collider1.isTrigger = false;
+                _collider2.isTrigger = false;
                 anim.Play("SunFlower_Rise");
             }
             
