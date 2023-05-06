@@ -13,6 +13,11 @@ namespace Quest
     public class FrogQuest_Controller : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _messageField;
+        private GameObject _messageBackground;
+
+        [Space(10)]
+        private int _neededTadpoleCount = 3;
+        private int _tadpoleCount = 0;
 
         private IShootable _shootable;
 
@@ -37,7 +42,12 @@ namespace Quest
             } 
         };
 
-        private string[] _getTadpoleMessage = new string[] { "Tad1" };
+        private string[] _getTadpoleMessage = new string[]
+        {
+            "Мой Биба вернулся! Спасибо, скорее верни мне оставшихся!",
+            "Боба! Радость моя, но где же последний?",
+            "О, похоже на триплет! Спасибо тебе, Капля, теперь мы квиты! Ква" 
+        };
 
         private int _indexI = 0;
         private int _indexJ = 0;
@@ -48,6 +58,8 @@ namespace Quest
 
         private void Awake()
         {
+            _messageBackground = _messageField.transform.parent.gameObject;
+
             _shootable = GetComponentInChildren<IShootable>();
 
             _shootable.OnShooted += Shooted;
@@ -65,7 +77,16 @@ namespace Quest
 
             callback?.Invoke();
 
-            ShowMessage(_getTadpoleMessage[Random.Range(0, _getTadpoleMessage.Length)]);
+            ShowMessage(_getTadpoleMessage[_tadpoleCount]);
+            _tadpoleCount++;
+
+            if (_tadpoleCount == _neededTadpoleCount)
+                QuestDone();
+        }
+
+        private void QuestDone()
+        {
+
         }
 
         private void ShowMessage(string message)
@@ -100,12 +121,10 @@ namespace Quest
 
         private void ChangeDropRange()
         {
-            _messageField.gameObject.SetActive(_isDropInRange);
+            _messageBackground.SetActive(_isDropInRange);
 
             if (!_isDropInRange)
                 return;
-
-            _dropColliders[0].GetComponentInParent<Drop.Drop_Controller>().DropMessage.ShowHelpMessage(0);
 
             if (_isReaded)
             {
