@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -91,7 +92,19 @@ namespace Quest
 
         private void ShowMessage(string message)
         {
+            if (!_isDropInRange)
+                StartCoroutine(ShowMessageTemporary());
+
             _messageField.text = message;
+        }
+
+        private IEnumerator ShowMessageTemporary()
+        {
+            _messageBackground.SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            _messageBackground.SetActive(_isDropInRange);
         }
 
         private void ChangeMessage()
