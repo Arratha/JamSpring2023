@@ -31,10 +31,7 @@ namespace Quest
 
             _isQuestDone = true;
 
-            _final2.SetActive();
-
-            _drop.RemoveControl();
-            //место для анимации
+            _final2.SetActive(_drop);
         }
 
         private bool CheckForLeaf()

@@ -26,7 +26,7 @@ namespace Items
                     transform.parent = controller.transform;
 
                     AddSpring(controller.DropShooting.GetComponent<Rigidbody2D>());
-                    controller.DropMove.SetGravity(0.5f);
+                    controller.DropMove.SetGravity(0.7f);
                     break;
                 case ItemState.Projectile:
                     _currentState = ItemState.Pickable;

@@ -19,11 +19,18 @@ namespace Quest
 
         private bool _isQuestDone;
 
+        [SerializeField] private GameObject _fish;
+        private Animator _animFish;
+        private Animator _animAquarium;
+
         private void Awake()
         {
             _shootable = GetComponentInChildren<IShootable>();
 
             _shootable.OnShooted += Shooted;
+
+            _animAquarium = GetComponent<Animator>();
+            _animFish = _fish.GetComponent<Animator>();
         }
 
         private void Shooted(ProjectileType type, Vector2 projectilePosition, OnShootCallback callback)
@@ -53,6 +60,8 @@ namespace Quest
 
             CreateReward();
 
+            _animAquarium.Play("Broken");
+            _animFish.Play("FishStand1");
             //запуск рыбы. По окончанию анимации должна включить объект, на котором final 1
         }
 
